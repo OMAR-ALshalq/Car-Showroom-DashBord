@@ -116,7 +116,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="BoxUrl">
+        <div className="BoxUrl" id="UrlBar">
           <div className="Url">
             <p>
               <Link to="/">Login</Link>
@@ -163,7 +163,7 @@ export default function Hero() {
                 </div>
               </div>
               <div className="Links-Box" dir="rtl">
-                <HashLink smooth to="allCar#NavBar">
+                <HashLink smooth to="allCar#AllCar">
                   <div className="LinkCar">
                     <IoCarSport className="Links-Icon" />
                     السيارات
@@ -172,7 +172,7 @@ export default function Hero() {
 
                 <HashLink
                   smooth
-                  to="alluser#NavBar"
+                  to="alluser#AllUser"
                   onClick={(e) => {
                     if (userRole === "user") {
                       e.preventDefault(); // يمنع الانتقال إلى الصفحة
@@ -189,7 +189,7 @@ export default function Hero() {
                   </div>
                 </HashLink>
                 <HashLink
-                  to="Classification#NavBar"
+                  to="Classification#Head"
                   onClick={(e) => {
                     if (userRole === "user") {
                       e.preventDefault(); // يمنع الانتقال إلى الصفحة
