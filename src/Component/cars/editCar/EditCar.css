@@ -1,0 +1,740 @@
+.BoxEditCar {
+  width: 100%;
+  height: auto;
+}
+
+.BoxEditCar .TitleBoxEditCar {
+  text-align: center;
+  margin: 10px 0 10px 0;
+}
+
+.BoxEditCar .TitleBoxEditCar h3 {
+  color: var(--text-primary);
+}
+.BoxEditCar .BoxFormEditCar .imageAndinfoCar {
+  display: flex;
+  justify-content: space-around;
+}
+
+.BoxEditCar .BoxFormEditCar .imageAndinfoCar .imageCar,
+.BoxEditCar .BoxFormEditCar .imageAndinfoCar .infoCar {
+  width: 45%;
+}
+
+.BoxEditCar .BoxFormEditCar .imageAndinfoCar .imageCar h3 {
+  color: var(--text-primary);
+}
+
+.BoxEditCar .BoxFormEditCar .imageAndinfoCar .imageCar .BoximagesCar {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  width: 350px;
+  padding: 20px;
+  gap: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.BoxEditCar
+  .BoxFormEditCar
+  .imageAndinfoCar
+  .imageCar
+  .BoximagesCar
+  .BoxImagesSlider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+  width: 100%;
+}
+.BoxEditCar
+  .BoxFormEditCar
+  .imageAndinfoCar
+  .imageCar
+  .BoximagesCar
+  .BoxImagesSlider
+  .imagMain {
+  width: 95%;
+  height: 200px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  position: relative;
+}
+
+.BoxEditCar
+  .BoxFormEditCar
+  .imageAndinfoCar
+  .imageCar
+  .BoximagesCar
+  .BoxImagesSlider
+  .imagMain
+  .imagMainOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.363);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.BoxEditCar
+  .BoxFormEditCar
+  .imageAndinfoCar
+  .imageCar
+  .BoximagesCar
+  .BoxImagesSlider
+  .imagMain:hover
+  > .imagMainOverlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.BoxEditCar
+  .BoxFormEditCar
+  .imageAndinfoCar
+  .imageCar
+  .BoximagesCar
+  .BoxImagesSlider
+  .imagMain
+  .imagMainOverlay
+  .DeleteImage,
+.BoxEditCar
+  .BoxFormEditCar
+  .imageAndinfoCar
+  .imageCar
+  .BoximagesCar
+  .BoxImagesSlider
+  .imagMain
+  .imagMainOverlay
+  .EditImage,
+.BoxFormEditCar
+  .imageAndinfoCar
+  .imageCar
+  .BoximagesCar
+  .BoxImagesSlider
+  .imagMain
+  .imagMainOverlay
+  .AddImage {
+  font-size: 25px;
+}
+
+.BoxEditCar
+  .BoxFormEditCar
+  .imageAndinfoCar
+  .imageCar
+  .BoximagesCar
+  .BoxImagesSlider
+  .imagMain
+  .imagMainOverlay
+  .AddImage {
+  border: 1px solid green;
+  background: green;
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+}
+.BoxEditCar
+  .BoxFormEditCar
+  .imageAndinfoCar
+  .imageCar
+  .BoximagesCar
+  .BoxImagesSlider
+  .imagMain
+  .imagMainOverlay
+  .DeleteImage {
+  border: 1px solid red;
+  background: red;
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+}
+
+.BoxEditCar
+  .BoxFormEditCar
+  .imageAndinfoCar
+  .imageCar
+  .BoximagesCar
+  .BoxImagesSlider
+  .imagMain
+  .imagMainOverlay
+  .EditImage {
+  border: 1px solid rgb(255, 238, 0);
+  background: rgb(255, 238, 0);
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+}
+
+.BoxEditCar
+  .BoxFormEditCar
+  .imageAndinfoCar
+  .imageCar
+  .BoximagesCar
+  .BoxImagesSlider
+  .imagSecander {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0 0 0;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 10px;
+  cursor: grab;
+}
+
+.BoxEditCar
+  .BoxFormEditCar
+  .imageAndinfoCar
+  .imageCar
+  .BoximagesCar
+  .BoxImagesSlider
+  .imagSecander
+  .thumbnail-img {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  flex-shrink: 0;
+  border: 2px solid transparent;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.BoxEditCar
+  .BoxFormEditCar
+  .imageAndinfoCar
+  .imageCar
+  .BoximagesCar
+  .BoxImagesSlider
+  .imagSecander
+  .thumbnail-img.active {
+  border: 2px solid var(--accent-color);
+}
+
+.imagSecander::-webkit-scrollbar {
+  height: 6px;
+}
+.imagSecander::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+}
+.imagSecander::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+.BoxEditCar .BoxFormEditCar .imageAndinfoCar .infoCar h3 {
+  color: var(--text-primary);
+}
+
+/* End imageCar */
+/* Start infoCar */
+.BoxEditCar .BoxFormEditCar .imageAndinfoCar .infoCar .BoxInputinfoCar {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  width: 350px;
+  padding: 20px;
+  gap: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+/* Start Edit Brand */
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+.dropdown-header {
+  padding: 5px 5px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  font-size: 15px;
+}
+
+.dropdown-header span {
+  color: var(--text-primary);
+}
+
+.dropdown-header:hover,
+.dropdown-header.active {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px 0px var(--accent-color);
+}
+
+.dropdown-header .arrow {
+  color: var(--text-primary);
+  font-size: 20px;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-header .arrow.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-shadow: var(--shadow-md);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: 0.5s;
+}
+
+.dropdown-item:hover {
+  background-color: var(--accent-color);
+  color: var(--accent-text);
+}
+
+.dropdown-item.selected {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-weight: bold;
+}
+
+.brand-dropdown-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-left: 10px;
+  border-radius: 4px;
+}
+
+.brand-name {
+  flex-grow: 1;
+}
+
+.brand-count {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+/* End Edit Brand */
+
+.BoxFormEditCar .infoEngineAndFeaturesCars .infoEnginCar .BoxInputinfoCar h6,
+.BoxEditCar .BoxFormEditCar .imageAndinfoCar .infoCar .BoxInputinfoCar h6 {
+  margin: -10px 0 -10px 0;
+  color: var(--text-primary);
+}
+
+.BoxEditCar .BoxFormEditCar .imageAndinfoCar .infoCar .BoxInputinfoCar input {
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-primary);
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  font-family: var(--main-font);
+  outline: none;
+}
+
+.BoxEditCar
+  .BoxFormEditCar
+  .imageAndinfoCar
+  .infoCar
+  .BoxInputinfoCar
+  input::placeholder {
+  color: var(--text-secondary);
+  font-family: var(--main-font);
+}
+
+.infoCar .BoxInputinfoCar .Box-radio {
+  margin: -5px 0 -5px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.infoCar .BoxInputinfoCar .Box-radio label {
+  color: var(--text-primary);
+}
+
+.BoxFormEditCar .infoEngineAndFeaturesCars {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0 0 0;
+}
+
+.BoxFormEditCar .infoEngineAndFeaturesCars .infoEnginCar,
+.BoxFormEditCar .infoEngineAndFeaturesCars .FeaturesCars {
+  width: 45%;
+}
+
+.BoxFormEditCar .infoEngineAndFeaturesCars .infoEnginCar h3 {
+  color: var(--text-primary);
+}
+
+.BoxFormEditCar .infoEngineAndFeaturesCars .infoEnginCar .BoxInputinfoCar {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  width: 350px;
+  padding: 20px;
+  gap: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.BoxFormEditCar
+  .infoEngineAndFeaturesCars
+  .infoEnginCar
+  .BoxInputinfoCar
+  input {
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-primary);
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  font-family: var(--main-font);
+  outline: none;
+}
+
+.BoxFormEditCar
+  .infoEngineAndFeaturesCars
+  .infoEnginCar
+  .BoxInputinfoCar
+  input::placeholder {
+  color: var(--text-secondary);
+  font-family: var(--main-font);
+}
+
+.BoxFormEditCar
+  .infoEngineAndFeaturesCars
+  .infoEnginCar
+  .BoxInputinfoCar
+  .box-radio
+  label {
+  color: var(--text-primary);
+}
+
+.BoxFormEditCar .infoEngineAndFeaturesCars .FeaturesCars h3 {
+  color: var(--text-primary);
+}
+
+.BoxFormEditCar .infoEngineAndFeaturesCars .FeaturesCars .BoxFeaturesCars {
+  width: 350px;
+  height: 310px;
+  overflow-y: scroll;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 0 20px 20px 20px;
+}
+
+.BoxFormEditCar
+  .infoEngineAndFeaturesCars
+  .FeaturesCars
+  .BoxFeaturesCars
+  input {
+  width: 90%;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-primary);
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  font-family: var(--main-font);
+  outline: none;
+  margin: 10px 0 0 0;
+}
+
+.BoxFormEditCar
+  .infoEngineAndFeaturesCars
+  .FeaturesCars
+  .BoxFeaturesCars
+  input::placeholder {
+  color: var(--text-secondary);
+  font-family: var(--main-font);
+}
+
+.BoxFormEditCar .infoEngineAndFeaturesCars .FeaturesCars .BoxFeaturesCars h4 {
+  color: var(--text-primary);
+}
+
+.BoxFormEditCar .StatusCar {
+  margin: 20px 30px 0 0;
+}
+
+.BoxFormEditCar .StatusCar h3 {
+  color: var(--text-primary);
+}
+
+.BoxFormEditCar .StatusCar label {
+  color: var(--text-primary);
+}
+
+.BoxFormEditCar .discCarAndQrCode {
+  display: flex;
+  justify-content: space-between;
+}
+
+.BoxFormEditCar .disCar {
+  margin: 20px 30px 30px 0;
+}
+
+.BoxFormEditCar .disCar h3 {
+  color: var(--text-primary);
+}
+
+.BoxFormEditCar .disCar textarea {
+  width: 380px;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  font-family: var(--main-font);
+  outline: none;
+  padding: 10px 10px 0 0;
+}
+
+.BoxFormEditCar .discCarAndQrCode .BoxQRCode {
+  margin: 20px 30px 30px 0;
+  width: 480px;
+}
+
+.BoxFormEditCar .discCarAndQrCode .BoxQRCode h3 {
+  color: var(--text-primary);
+}
+
+.BoxFormEditCar .discCarAndQrCode .BoxQRCode .QRCode {
+  height: 100%;
+  cursor: pointer;
+}
+
+.BoxEditCar form .box-button-submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.BoxEditCar form .box-button-submit button {
+  margin: 5px -10px 5px 0;
+  padding: 10px 0;
+  width: 90%;
+  font-family: var(--main-font);
+  outline: none;
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.BoxEditCar form .box-button-submit button:nth-child(2) {
+  margin-bottom: 20px;
+}
+
+.BoxEditCar form .box-button-submit button:hover {
+  border: 1px solid transparent;
+  background: var(--accent-color);
+  color: var(--accent-text);
+}
+
+/* Start Media */
+@media (max-width: 989px) {
+  .BoxEditCar .BoxFormEditCar .imageAndinfoCar {
+    flex-direction: column;
+    align-items: center;
+  }
+  .BoxEditCar .BoxFormEditCar .imageAndinfoCar .imageCar {
+    width: 80%;
+  }
+  .BoxEditCar .BoxFormEditCar .imageAndinfoCar .imageCar .BoximagesCar {
+    width: 95%;
+    height: 450px;
+  }
+  .BoxEditCar
+    .BoxFormEditCar
+    .imageAndinfoCar
+    .imageCar
+    .BoximagesCar
+    .BoxImagesSlider
+    .imagMain {
+    height: 339px;
+  }
+  .BoxEditCar .BoxFormEditCar .imageAndinfoCar .infoCar {
+    width: 80%;
+    margin: 10px 0 0 0;
+  }
+  .BoxEditCar .BoxFormEditCar .imageAndinfoCar .infoCar .BoxInputinfoCar {
+    width: 95%;
+  }
+
+  .BoxEditCar .BoxFormEditCar .infoEngineAndFeaturesCars {
+    flex-direction: column;
+    align-items: center;
+  }
+  .BoxEditCar .BoxFormEditCar .infoEngineAndFeaturesCars .infoEnginCar,
+  .BoxEditCar .BoxFormEditCar .infoEngineAndFeaturesCars .FeaturesCars {
+    width: 80%;
+  }
+
+  .BoxEditCar
+    .BoxFormEditCar
+    .infoEngineAndFeaturesCars
+    .infoEnginCar
+    .BoxInputinfoCar,
+  .BoxEditCar
+    .BoxFormEditCar
+    .infoEngineAndFeaturesCars
+    .FeaturesCars
+    .BoxFeaturesCars {
+    width: 95%;
+  }
+
+  .BoxEditCar .StatusCar,
+  .BoxEditCar .disCar {
+    margin: 20px 90px 0 0;
+  }
+  .BoxEditCar .discCarAndQrCode .BoxQRCode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 799px) {
+  .BoxEditCar .discCarAndQrCode {
+    flex-direction: column;
+  }
+  .BoxEditCar .discCarAndQrCode .BoxQRCode {
+    margin: 20px 89px 30px 0;
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .BoxEditCar .BoxFormEditCar .imageAndinfoCar,
+  .BoxEditCar .BoxFormEditCar .infoEngineAndFeaturesCars {
+    margin: 0 -25px 0 0;
+  }
+  .BoxEditCar .BoxFormEditCar .imageAndinfoCar .imageCar .BoximagesCar {
+    height: 350px;
+  }
+
+  .BoxEditCar
+    .BoxFormEditCar
+    .imageAndinfoCar
+    .imageCar
+    .BoximagesCar
+    .BoxImagesSlider
+    .imagMain {
+    height: 200px;
+  }
+
+  .BoxEditCar .StatusCar,
+  .BoxEditCar .disCar {
+    margin: 20px 20px 0 0;
+  }
+
+  .BoxEditCar .disCar textarea {
+    width: 330px;
+  }
+    .BoxEditCar .discCarAndQrCode .BoxQRCode {
+    margin: 20px 20px 30px 0;
+    display: block;
+  }
+
+}
+
+/* End Media */

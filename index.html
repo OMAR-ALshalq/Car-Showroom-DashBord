@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo-dashbord.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- ✅ Dark Mode تلقائي -->
+    <script>
+      (function () {
+        var saved = sessionStorage.getItem("site-theme");
+        if (saved) {
+          document.documentElement.setAttribute("data-theme", saved);
+        } else {
+          var isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+        }
+
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
+          if (!sessionStorage.getItem("site-theme")) {
+            document.documentElement.setAttribute("data-theme", e.matches ? "dark" : "light");
+          }
+        });
+      })();
+    </script>
+    
+    <title>Almalih Motors - Dashboard</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

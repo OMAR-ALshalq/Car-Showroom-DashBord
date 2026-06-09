@@ -1,0 +1,802 @@
+.BoxAllCar {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.BoxAllCar .filterAndAddCar {
+  margin: 20px 0 0 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.BoxAllCar .filterAndAddCar a {
+  margin: 0 20px 0 0;
+  padding: 2px 10px;
+  text-decoration: none;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.BoxAllCar .filterAndAddCar a:hover {
+  background: var(--accent-color);
+  color: var(--accent-text);
+  box-shadow: 4px 3px 7px 2px var(--shadow-sm);
+}
+
+.BoxAllCar .filterAndAddCar .filter-container {
+  margin: 0 0 0 20px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.BoxAllCar .filterAndAddCar .filter-container .BoxSearch {
+  display: flex;
+  align-items: center;
+  padding: 2px 10px;
+  background: var(--bg-primary);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  gap: 5px;
+}
+
+.BoxAllCar .filterAndAddCar .filter-container .BoxSearch .icon-Search {
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+.BoxAllCar .filterAndAddCar .filter-container .BoxSearch input {
+  width: 250px;
+  padding: 5px 0 5px 0;
+  border: none;
+  outline: none;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.BoxAllCar .filterAndAddCar .filter-container .price-input {
+  padding: 5px 0 5px 0;
+  border: none;
+  outline: none;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+.BoxAllCar .filterAndAddCar .filter-container .BoxSearch input::placeholder {
+  color: var(--text-secondary);
+}
+
+.BoxAllCar .filterAndAddCar .filter-container .select-group {
+  display: flex;
+  gap: 20px;
+}
+
+.BoxAllCar .filterAndAddCar .filter-container .select-group .Select-Brand,
+.BoxAllCar .filterAndAddCar .filter-container .select-group .Select-Model {
+  position: relative;
+}
+
+.BoxAllCar
+  .filterAndAddCar
+  .filter-container
+  .select-group
+  .Select-Brand
+  .dropdown-header,
+.BoxAllCar
+  .filterAndAddCar
+  .filter-container
+  .select-group
+  .Select-Model
+  .dropdown-header {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 0 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  cursor: pointer;
+  min-width: 120px;
+  min-height: 30px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.BoxAllCar
+  .filterAndAddCar
+  .filter-container
+  .select-group
+  .Select-Model
+  .disabled-style {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.BoxAllCar
+  .filterAndAddCar
+  .filter-container
+  .select-group
+  .Select-Brand
+  .dropdown-list-items,
+.BoxAllCar
+  .filterAndAddCar
+  .filter-container
+  .select-group
+  .Select-Model
+  .dropdown-list-items {
+  position: absolute;
+  top: 15px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  max-height: 150px;
+  min-width: 122px;
+  overflow-y: scroll;
+  list-style-type: none;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  z-index: 12;
+}
+
+.BoxAllCar
+  .filterAndAddCar
+  .filter-container
+  .select-group
+  .Select-Brand
+  .dropdown-list-items
+  li,
+.BoxAllCar
+  .filterAndAddCar
+  .filter-container
+  .select-group
+  .Select-Model
+  .dropdown-list-items
+  li {
+  width: 100%;
+  height: 25px;
+  margin: 0 10px 5px 0;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.BoxAllCar
+  .filterAndAddCar
+  .filter-container
+  .select-group
+  .Select-Brand
+  .dropdown-list-items
+  li:hover,
+.BoxAllCar
+  .filterAndAddCar
+  .filter-container
+  .select-group
+  .Select-Model
+  .dropdown-list-items
+  li:hover {
+  background: var(--accent-color);
+  color: var(--accent-text);
+}
+/* =================================================== */
+/* حركات الأنميشن الذكية بالـ Keyframes */
+/* =================================================== */
+
+.scaleIn {
+  animation: dropdownShow 0.25s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  -webkit-animation: dropdownShow 0.25s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.scaleOut {
+  animation: dropdownHide 0.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes dropdownShow {
+  from {
+    opacity: 0;
+    transform: scaleY(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes dropdownHide {
+  from {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  to {
+    opacity: 0;
+    transform: scaleY(0.8);
+  }
+}
+
+.BoxAllCar .filterAndAddCar .filter-container .select-group input {
+  padding: 0 10px;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.BoxAllCar .filterAndAddCar .filter-container .select-group input::placeholder {
+  color: var(--text-secondary);
+}
+
+.BoxAllCar .boxMainCardCar {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.BoxAllCar .CardCar {
+  height: 220px;
+  width: 95%;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  margin: 10px 20px;
+  padding: 10px 20px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.BoxAllCar .CardCar .infoCar {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  margin: 10px 0 0 0;
+}
+
+.BoxAllCar .CardCar .infoCar .CarimagAndinfo {
+  width: 50%;
+}
+
+.BoxAllCar .CardCar .infoCar .CarimagAndinfo img {
+  width: 170px;
+  height: 130px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.BoxAllCar .CardCar .infoCar .CarimagAndinfo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.BoxAllCar .CardCar .infoCar .CarimagAndinfo .Carinfo {
+  color: var(--text-primary);
+}
+
+.BoxAllCar .CardCar .infoCar .CarimagAndinfo .Carinfo h3 {
+  color: var(--text-primary);
+}
+
+.BoxAllCar .CardCar .infoCar .CarimagAndinfo h5:nth-child(4),
+.BoxAllCar .CardCar .infoCar .CarimagAndinfo h5:nth-child(5),
+.BoxAllCar .CardCar .infoCar .CarimagAndinfo h5:nth-child(6) {
+  margin: -5px 0 0 0;
+}
+
+.BoxAllCar .CardCar .infoCar .CarStatus {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.BoxAllCar .CardCar .infoCar .CarStatus h4 {
+  padding: 5px 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.BoxAllCar .CardCar .infoCar .CarPriceAndEdite {
+  width: 35%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.BoxAllCar .CardCar .infoCar .CarPriceAndEdite .PraiceAndEditeCar .price {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.BoxAllCar .CardCar .infoCar .CarPriceAndEdite .PraiceAndEditeCar .price h3 {
+  color: var(--text-primary);
+}
+
+.BoxAllCar
+  .CardCar
+  .infoCar
+  .CarPriceAndEdite
+  .PraiceAndEditeCar
+  .price
+  .icon-price {
+  font-size: 20px;
+  margin: 0 0 2px 0;
+  color: var(--dashboard-success);
+}
+.BoxAllCar
+  .CardCar
+  .infoCar
+  .CarPriceAndEdite
+  .PraiceAndEditeCar
+  .buttonEditeCar {
+  margin: 10px 0 0 0;
+}
+
+.BoxAllCar
+  .CardCar
+  .infoCar
+  .CarPriceAndEdite
+  .PraiceAndEditeCar
+  .buttonEditeCar
+  a {
+  text-decoration: none;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  padding: 5px 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.BoxAllCar .CardCar .infoCar .CarPriceAndEdite .PraiceAndEditeCar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.BoxAllCar
+  .CardCar
+  .infoCar
+  .CarPriceAndEdite
+  .PraiceAndEditeCar
+  .buttonEditeCar
+  a:hover {
+  background: var(--accent-color);
+  color: var(--accent-text);
+  box-shadow: 4px 3px 7px 2px var(--shadow-sm);
+}
+
+.BoxAllCar .CardCar .BoxCarDetils {
+  background: var(--bg-tertiary);
+  width: 100%;
+  height: 50px;
+  padding: 0 0 0px 0;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.BoxAllCar .CardCar .BoxCarDetils .BoxFeatures,
+.BoxAllCar .CardCar .BoxCarDetils .BoxFileDataCar {
+  width: 45%;
+  padding: 0 10px 0 10px;
+  height: 100%;
+}
+
+.BoxAllCar .CardCar .BoxCarDetils .BoxFeatures {
+  display: flex;
+  gap: 20px;
+}
+
+.BoxAllCar .CardCar .BoxCarDetils .BoxFeatures .safetyFeatures,
+.BoxAllCar .CardCar .BoxCarDetils .BoxFeatures .comfortFeatures,
+.BoxAllCar .CardCar .BoxCarDetils .BoxFeatures .techFeatures {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+  color: var(--text-primary);
+}
+/* الميزات */
+/* start */
+.FloatingDiv {
+  position: absolute;
+  bottom: 70%;
+  left: -25%;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  max-height: 200px;
+  min-width: 150px;
+  overflow-y: scroll;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: floatingOpen 1.0s cubic-bezier(0.25, 0.8, 0.25, 1.2) forwards;
+  -webkit-animation: floatingOpen 1.0s cubic-bezier(0.25, 0.8, 0.25, 1.2) forwards;
+}
+
+.FloatingDiv::-webkit-scrollbar {
+  width: 5px;
+}
+
+.FloatingDiv span {
+  font-size: 12px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 4px;
+  text-align: end;
+}
+
+.FloatingDiv span:last-child {
+  border-bottom: none;
+}
+/* end */
+
+.BoxAllCar .CardCar .BoxCarDetils .BoxFileDataCar {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.BoxAllCar .CardCar .BoxCarDetils .BoxFileDataCar button {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 5px 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.BoxAllCar .CardCar .BoxCarDetils .BoxFileDataCar button:hover {
+  background: var(--accent-color);
+  color: var(--accent-text);
+  box-shadow: 4px 3px 7px 2px var(--shadow-sm);
+}
+
+/*  */
+/* الحاوية الأساسية للسكيلتون */
+.skeleton-card {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: var(--bg-secondary);
+}
+
+/* حركة الأنيميشن */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary) 25%,
+    var(--bg-primary) 50%,
+    var(--bg-tertiary) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer-animation 1.5s infinite linear;
+  border-radius: 4px;
+}
+
+.skeleton-card .BoxFeatures {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.skeleton-card .BoxCarDetils .sk-button {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 0 20px 12px 0;
+}
+@keyframes shimmer-animation {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* محاكاة العناصر */
+.sk-image {
+  width: 150px;
+  height: 100px;
+}
+.sk-title {
+  width: 120px;
+  height: 20px;
+  margin-bottom: 10px;
+}
+.sk-line {
+  width: 80px;
+  height: 12px;
+  margin-bottom: 8px;
+}
+.sk-status {
+  width: 70px;
+  height: 25px;
+  border-radius: 15px;
+}
+.sk-qr {
+  width: 90px;
+  height: 90px;
+}
+.sk-button {
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;
+}
+.sk-feature {
+  width: 30%;
+  height: 20px;
+}
+/*  */
+
+/* Start Media */
+@media (max-width: 969px) {
+  .BoxAllCar {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .BoxAllCar .boxMainCardCar {
+    margin: 20px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .BoxAllCar .CardCar {
+    height: 420px;
+    width: 40%;
+    margin: 10px 0 10px 0;
+    padding: 0 10px 0 10px;
+  }
+  .BoxAllCar .CardCar .infoCar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+  .BoxAllCar .boxMainCardCar .infoCar .CarimagAndinfo {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .BoxAllCar .boxMainCardCar .infoCar .CarimagAndinfo .CarImage {
+    width: 100%;
+    height: 200px;
+  }
+  .BoxAllCar .boxMainCardCar .infoCar .CarimagAndinfo .CarImage img {
+    width: 100%;
+    height: 100%;
+  }
+  .BoxAllCar .boxMainCardCar .infoCar .CarimagAndinfo .Carinfo h5:nth-child(2),
+  .BoxAllCar .boxMainCardCar .infoCar .CarimagAndinfo .Carinfo h5:nth-child(4),
+  .BoxAllCar .boxMainCardCar .infoCar .CarimagAndinfo .Carinfo h5:nth-child(5) {
+    display: none;
+  }
+
+  .BoxAllCar .boxMainCardCar .infoCar .CarimagAndinfo .Carinfo h3:nth-child(1) {
+    width: 100%;
+    text-align: center;
+  }
+  .BoxAllCar .boxMainCardCar .infoCar .CarimagAndinfo .Carinfo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .BoxAllCar .boxMainCardCar .CardCar .infoCar .CarStatus {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+  }
+  .BoxAllCar .boxMainCardCar .infoCar .CarStatus h4 {
+    font-size: 12px;
+    padding: 2px 5px;
+    margin: 5px 0 0 0;
+  }
+  .BoxAllCar .CardCar .infoCar .CarPriceAndEdite {
+    width: 100%;
+  }
+  .BoxAllCar .CardCar .infoCar .CarPriceAndEdite .PraiceAndEditeCar {
+    position: relative;
+    width: 100%;
+  }
+  .BoxAllCar .CardCar .infoCar .CarPriceAndEdite .PraiceAndEditeCar .price {
+    position: absolute;
+    right: 0;
+    top: -25px;
+  }
+
+  .BoxAllCar .CardCar .infoCar .CarPriceAndEdite .box-QrCodeCar {
+    display: none;
+  }
+  .BoxAllCar .CardCar .BoxCarDetils .BoxFeatures {
+    display: none;
+  }
+
+  .BoxAllCar .CardCar .BoxCarDetils {
+    display: block;
+  }
+  .BoxAllCar .CardCar .BoxCarDetils .BoxFileDataCar {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .BoxAllCar .CardCar .BoxCarDetils .BoxFeatures {
+    width: 80%;
+  }
+
+  .skeleton-card .infoCar .CarimagAndinfo .CarImage .sk-image {
+    width: 100%;
+    height: 200px;
+  }
+  .skeleton-card .infoCar .CarimagAndinfo .Carinfo div:last-child {
+    display: none;
+  }
+  .skeleton-card .infoCar .CarimagAndinfo .Carinfo div:first-child {
+    width: 100%;
+  }
+  .skeleton-card .infoCar .CarimagAndinfo .Carinfo {
+    width: 100%;
+  }
+  .skeleton-card .infoCar .CarPriceAndEdite .PraiceAndEditeCar {
+    position: relative;
+  }
+  .skeleton-card .infoCar .CarPriceAndEdite .PraiceAndEditeCar .sk-title {
+    position: absolute;
+    top: -20px;
+    right: 0px;
+  }
+}
+
+@media (max-width: 964px) {
+  .BoxAllCar .filterAndAddCar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .BoxAllCar .filterAndAddCar a {
+    width: 83px;
+  }
+}
+
+@media (max-width: 850px) {
+  .BoxAllCar .filterAndAddCar .filter-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .BoxAllCar .CardCar {
+    width: 100%;
+  }
+  .BoxAllCar .filterAndAddCar .filter-container .select-group {
+    flex-direction: column;
+    gap: 5px;
+    width: 295px;
+  }
+
+  .BoxAllCar .filterAndAddCar .filter-container .select-group input {
+    padding: 10px 5px;
+  }
+
+  .BoxAllCar
+    .filterAndAddCar
+    .filter-container
+    .select-group
+    .Select-Brand
+    .dropdown-list-items,
+  .BoxAllCar
+    .filterAndAddCar
+    .filter-container
+    .select-group
+    .Select-Model
+    .dropdown-list-items {
+    position: absolute;
+    top: 15px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    max-height: 150px;
+    min-width: 100%;
+    overflow-y: scroll;
+    list-style-type: none;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    z-index: 12;
+  }
+}
+/* End Media */

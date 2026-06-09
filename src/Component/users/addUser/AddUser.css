@@ -1,0 +1,218 @@
+.BoxAddNewUser {
+  height: 100%;
+  /* width: 100%; */
+  /* background: rgba(192, 142, 142, 0.205); */
+  /* background: red; */
+  /* width: 100%; */
+  margin: 20px 0 0 0;
+}
+
+.BoxAddNewUser .BoxFormAddUser {
+  color: var(--secandre-color);
+  /* background: var(); */
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+}
+
+.BoxAddNewUser .BoxFormAddUser h2{
+  color: var(--secandre-color);
+  display: flex;
+  /* flex-direction: row-reverse; */
+}
+
+.BoxAddNewUser .BoxFormAddUser form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* width: 100%; */
+}
+
+.BoxAddNewUser .BoxFormAddUser form .box-Name,
+.BoxAddNewUser .BoxFormAddUser form .box-email,
+.BoxAddNewUser .BoxFormAddUser form .box-number,
+.BoxAddNewUser .BoxFormAddUser form .box-password,
+.BoxAddNewUser .BoxFormAddUser form .box-ConfirmPassword {
+  display: flex;
+  /*width: 100%;*/
+  /* background: red; */
+  align-items: center;
+  border: 1px solid var(--secandre-color);
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: var(--secandre-color);
+}
+
+.BoxAddNewUser .BoxFormAddUser form .box-Name input,
+.BoxAddNewUser .BoxFormAddUser form .box-email input,
+.BoxAddNewUser .BoxFormAddUser form .box-number input,
+.BoxAddNewUser .BoxFormAddUser form .box-password input,
+.BoxAddNewUser .BoxFormAddUser form .box-ConfirmPassword input {
+  width: 95%;
+  border: 1px solid transparent;
+  outline: none;
+  padding: 5px 0 5px 5px;
+  color: var(--secandre-color) !important;
+  background-color: var(--main-font) !important;
+  /* margin: 5px 0 0 0; */
+}
+
+.BoxAddNewUser .BoxFormAddUser form .box-Name .iconName,
+.BoxAddNewUser .BoxFormAddUser form .box-number .iconPhone,
+.BoxAddNewUser .BoxFormAddUser form .box-email .iconEmail,
+.BoxAddNewUser .BoxFormAddUser form .box-password .iconPassword {
+  font-size: 20px;
+}
+
+.BoxAddNewUser .BoxFormAddUser form .box-password .eye-icon,
+.BoxAddNewUser .BoxFormAddUser form .box-ConfirmPassword .eye-icon {
+  margin: 5px 0 0 5px;
+}
+
+.BoxAddNewUser .BoxFormAddUser form .box-password .eye-icon .Eyeicon, 
+.BoxAddNewUser .BoxFormAddUser form .box-ConfirmPassword .eye-icon .Eyeicon {
+  font-size: 20px;
+  cursor: pointer;
+}
+.BoxAddNewUser .BoxFormAddUser form .BoxRadioRole {
+  display: flex;
+  align-items: start;
+  /* justify-content: center; */
+  /* background: green; */
+  padding: 5px 0 5px 0;
+}
+
+
+.BoxAddNewUser .BoxFormAddUser form button {
+  padding: 5px 0;
+  /*font-size: 18px;
+  */font-family: var(--main-font);
+  outline: none;
+  color: var(--main-color);
+  background: var(--secandre-color);
+  border: 1px solid var(--secandre-color);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.BoxAddNewUser .BoxFormAddUser form button:hover {
+  background: var(--secandre-color);
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  box-shadow: 4px 3px 7px 2px var(--secandre-color);
+}.BoxAddNewUser {
+  height: 100%;
+  margin: 20px 0 0 0;
+}
+
+.BoxAddNewUser .BoxFormAddUser {
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.BoxAddNewUser .BoxFormAddUser h2{
+  color: var(--text-primary);
+  display: flex;
+}
+
+.BoxAddNewUser .BoxFormAddUser form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.BoxAddNewUser .BoxFormAddUser form .box-Name,
+.BoxAddNewUser .BoxFormAddUser form .box-email,
+.BoxAddNewUser .BoxFormAddUser form .box-number,
+.BoxAddNewUser .BoxFormAddUser form .box-password,
+.BoxAddNewUser .BoxFormAddUser form .box-ConfirmPassword {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: var(--text-primary);
+}
+
+.BoxAddNewUser .BoxFormAddUser form .box-Name input,
+.BoxAddNewUser .BoxFormAddUser form .box-email input,
+.BoxAddNewUser .BoxFormAddUser form .box-number input,
+.BoxAddNewUser .BoxFormAddUser form .box-password input,
+.BoxAddNewUser .BoxFormAddUser form .box-ConfirmPassword input {
+  width: 95%;
+  border: 1px solid transparent;
+  outline: none;
+  padding: 5px 0 5px 5px;
+  color: var(--text-primary);
+  background: transparent;
+  font-family: var(--main-font);
+}
+
+.BoxAddNewUser .BoxFormAddUser form .box-Name .iconName,
+.BoxAddNewUser .BoxFormAddUser form .box-number .iconPhone,
+.BoxAddNewUser .BoxFormAddUser form .box-email .iconEmail,
+.BoxAddNewUser .BoxFormAddUser form .box-password .iconPassword {
+  font-size: 20px;
+}
+
+.BoxAddNewUser .BoxFormAddUser form .box-password .eye-icon,
+.BoxAddNewUser .BoxFormAddUser form .box-ConfirmPassword .eye-icon {
+  margin: 5px 0 0 5px;
+}
+
+.BoxAddNewUser .BoxFormAddUser form .box-password .eye-icon .Eyeicon, 
+.BoxAddNewUser .BoxFormAddUser form .box-ConfirmPassword .eye-icon .Eyeicon {
+  font-size: 20px;
+  cursor: pointer;
+}
+.BoxAddNewUser .BoxFormAddUser form .BoxRadioRole {
+  display: flex;
+  align-items: start;
+  padding: 5px 0 5px 0;
+}
+
+
+.BoxAddNewUser .BoxFormAddUser form button {
+  padding: 5px 0;
+  font-family: var(--main-font);
+  outline: none;
+  color: var(--accent-text);
+  background: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.BoxAddNewUser .BoxFormAddUser form button:hover {
+  background: transparent;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  box-shadow: var(--shadow-sm);
+}

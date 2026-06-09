@@ -1,0 +1,948 @@
+.BoxAddCar {
+  width: 100%;
+  height: auto;
+}
+
+.BoxAddCar .TitelBage h3 {
+  text-align: center;
+  color: var(--text-primary);
+}
+
+
+.BoxAddCar .ImagesUploadSection h4 {
+  color: var(--text-primary);
+}
+
+.BoxAddCar .ImagesUploadSection .images-preview {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  margin: 20px 15px 0 55px ;
+  overflow-x: scroll;
+}
+
+.BoxAddCar .ImagesUploadSection .images-preview .image-item {
+  position: relative;
+}
+
+
+.BoxAddCar .ImagesUploadSection .images-preview .image-item img {
+  width: 100px;
+  height: 70px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.BoxAddCar .ImagesUploadSection .images-preview .image-item button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border-radius: 3px;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: none;
+  cursor: pointer;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+
+
+
+
+
+
+.BoxAddCar .infoCarAndinfoEngine,
+.BoxAddCar .FeaturesCar {
+  margin: 20px 0 0 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.BoxAddCar .infoCarAndinfoEngine .infoCar h4 {
+  color: var(--text-primary);
+}
+
+.BoxAddCar .infoCarAndinfoEngine .infoCar .BoxInputinfoCar {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  width: 350px;
+  padding: 20px;
+  gap: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  position: relative;
+}
+
+.BoxAddCar .infoCarAndinfoEngine .infoCar .BoxInputinfoCar .BoxPBrand,
+.BoxAddCar .infoCarAndinfoEngine .infoCar .BoxInputinfoCar .BoxPModel,
+.BoxAddCar .infoCarAndinfoEngine .infoCar .BoxInputinfoCar .BoxPBodyType {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 0 5px 0 0;
+}
+
+.BoxAddCar .infoCarAndinfoEngine .infoCar .BoxInputinfoCar p:nth-child(1) {
+  color: var(--text-primary);
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.BoxAddCar
+  .infoCarAndinfoEngine
+  .infoCar
+  .BoxInputinfoCar
+  .custom-dropdown-list {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 100;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: var(--shadow-md);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.BoxAddCar
+  .infoCarAndinfoEngine
+  .infoCar
+  .BoxInputinfoCar
+  .custom-dropdown-list-Model {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 100;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: var(--shadow-md);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.BoxAddCar
+  .infoCarAndinfoEngine
+  .infoCar
+  .BoxInputinfoCar
+  .custom-dropdown-list-BodyType {
+  position: absolute;
+  top: 140px;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 100;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: var(--shadow-md);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.BoxAddCar
+  .infoCarAndinfoEngine
+  .infoCar
+  .BoxInputinfoCar
+  .custom-dropdown-list
+  li,
+.BoxAddCar
+  .infoCarAndinfoEngine
+  .infoCar
+  .BoxInputinfoCar
+  .custom-dropdown-list-Model
+  li,
+.BoxAddCar
+  .infoCarAndinfoEngine
+  .infoCar
+  .BoxInputinfoCar
+  .custom-dropdown-list-BodyType
+  li {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-color);
+  transition: background 0.2s;
+  color: var(--text-primary);
+}
+
+.BoxAddCar
+  .infoCarAndinfoEngine
+  .infoCar
+  .BoxInputinfoCar
+  .custom-dropdown-list
+  li:hover,
+.BoxAddCar
+  .infoCarAndinfoEngine
+  .infoCar
+  .BoxInputinfoCar
+  .custom-dropdown-list-Model
+  li:hover,
+.BoxAddCar
+  .infoCarAndinfoEngine
+  .infoCar
+  .BoxInputinfoCar
+  .custom-dropdown-list-BodyType
+  li:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.rotate-icon {
+  transform: rotate(180deg);
+  transition: 0.3s;
+  margin: 0 10px 0 0;
+}
+
+.BoxAddCar .infoCarAndinfoEngine .infoCar .BoxInputinfoCar .Box-radio label,
+.BoxAddCar
+  .infoCarAndinfoEngine
+  .infoEngine
+  .BoxInputinfoEngine
+  .box-radio
+  label {
+  color: var(--text-primary);
+}
+
+.BoxAddCar .infoCarAndinfoEngine .infoEngine h4 {
+  color: var(--text-primary);
+}
+
+.BoxAddCar .infoCarAndinfoEngine .infoEngine .BoxInputinfoEngine {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  width: 350px;
+  padding: 20px;
+  gap: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.BoxAddCar .infoCarAndinfoEngine .infoCar .BoxInputinfoCar input,
+.BoxAddCar .infoCarAndinfoEngine .infoEngine .BoxInputinfoEngine input {
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-primary);
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  font-family: var(--main-font);
+}
+
+.BoxAddCar .infoCarAndinfoEngine .infoCar .BoxInputinfoCar input:focus,
+.BoxAddCar .infoCarAndinfoEngine .infoEngine .BoxInputinfoEngine input:focus {
+  outline: none;
+}
+.BoxAddCar .infoCarAndinfoEngine .infoCar .BoxInputinfoCar input::placeholder,
+.BoxAddCar
+  .infoCarAndinfoEngine
+  .infoEngine
+  .BoxInputinfoEngine
+  input::placeholder {
+  color: var(--text-secondary);
+  font-family: var(--main-font);
+}
+
+.BoxAddCar .infoCarAndinfoEngine .infoCar .BoxInputinfoCar .Box-radio {
+  display: flex;
+  gap: 10px;
+}
+
+.BoxAddCar .BoxInputinfoEngine .box-radio {
+  margin: -15px 0 0 0;
+}
+
+.BoxAddCar .FeaturesCar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.BoxAddCar .FeaturesCar h4,
+.BoxAddCar .DescriptionCar h4 {
+  width: 100%;
+  margin: 0 65px 0 0;
+  color: var(--text-primary);
+}
+
+.BoxAddCar .FeaturesCar .FeaturesSafetyAndComfortAndTech {
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.BoxAddCar .FeaturesCar .FeaturesSafetyAndComfortAndTech .safetyFeatures h5,
+.BoxAddCar .FeaturesCar .FeaturesSafetyAndComfortAndTech .comfortFeatures h5,
+.BoxAddCar .FeaturesCar .FeaturesSafetyAndComfortAndTech .techFeatures h5 {
+  color: var(--text-primary);
+}
+
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .safetyFeatures
+  .box-safetyFeatures,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .comfortFeatures
+  .box-ComfortFeatures,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .techFeatures
+  .box-TechFeatures {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 350px;
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .safetyFeatures
+  .box-safetyFeatures
+  .inputAndbutton,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .comfortFeatures
+  .box-ComfortFeatures
+  .inputAndbutton,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .techFeatures
+  .box-TechFeatures
+  .inputAndbutton {
+  display: flex;
+  gap: 10px;
+}
+
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .safetyFeatures
+  .box-safetyFeatures
+  input,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .comfortFeatures
+  .box-ComfortFeatures
+  input,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .techFeatures
+  .box-TechFeatures
+  input {
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-primary);
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  font-family: var(--main-font);
+  width: 75%;
+  outline: none;
+}
+
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .safetyFeatures
+  .box-safetyFeatures
+  input:focus
+  .BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .comfortFeatures
+  .box-ComfortFeatures
+  input:focus
+  .BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .techFeatures
+  .box-TechFeatures
+  input:focus {
+  outline: none;
+}
+
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .safetyFeatures
+  .box-safetyFeatures
+  input::placeholder,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .comfortFeatures
+  .box-ComfortFeatures
+  input::placeholder,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .techFeatures
+  .box-TechFeatures
+  input::placeholder {
+  color: var(--text-secondary);
+}
+
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .safetyFeatures
+  .box-safetyFeatures
+  button,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .comfortFeatures
+  .box-ComfortFeatures
+  button,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .techFeatures
+  .box-TechFeatures
+  button {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 5px 15px;
+  font-family: var(--main-font);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .safetyFeatures
+  .box-safetyFeatures
+  button:hover,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .comfortFeatures
+  .box-ComfortFeatures
+  button:hover,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .techFeatures
+  .box-TechFeatures
+  button:hover {
+  background: var(--accent-color);
+  color: var(--accent-text);
+  box-shadow: var(--shadow-sm);
+}
+
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .safetyFeatures
+  .box-safetyFeatures
+  button:focus,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .comfortFeatures
+  .box-ComfortFeatures
+  button:focus,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .techFeatures
+  .box-TechFeatures
+  button:focus {
+  background: var(--accent-color);
+  color: var(--accent-text);
+}
+
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .safetyFeatures
+  .box-safetyFeatures
+  ul,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .comfortFeatures
+  .box-ComfortFeatures
+  ul,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .techFeatures
+  .box-TechFeatures
+  ul {
+  padding-inline-start: 0px;
+  list-style-type: none;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .safetyFeatures
+  .box-safetyFeatures
+  .features-list
+  .bottonsFeatures,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .comfortFeatures
+  .box-ComfortFeatures
+  .features-list
+  .bottonsFeatures,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .techFeatures
+  .box-TechFeatures
+  .features-list
+  .bottonsFeatures {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .safetyFeatures
+  .box-safetyFeatures
+  .features-list
+  .bottonsFeatures
+  span,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .comfortFeatures
+  .box-ComfortFeatures
+  .features-list
+  .bottonsFeatures
+  span,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .techFeatures
+  .box-TechFeatures
+  .features-list
+  .bottonsFeatures
+  span {
+  word-break: break-word;
+  color: var(--text-primary);
+}
+
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .safetyFeatures
+  .box-safetyFeatures
+  .features-list
+  .bottonsFeatures
+  button,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .comfortFeatures
+  .box-ComfortFeatures
+  .features-list
+  .bottonsFeatures
+  button,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .techFeatures
+  .box-TechFeatures
+  .features-list
+  .bottonsFeatures
+  button {
+  width: 60px;
+}
+
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .safetyFeatures
+  .box-safetyFeatures
+  .features-list
+  .bottonsFeatures
+  .box-button,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .comfortFeatures
+  .box-ComfortFeatures
+  .features-list
+  .bottonsFeatures
+  .box-button,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .techFeatures
+  .box-TechFeatures
+  .features-list
+  .box-botton {
+  display: flex;
+  gap: 10px;
+  margin: 7px 0 0 0;
+}
+
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .safetyFeatures
+  .box-safetyFeatures
+  .editFeatures,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .comfortFeatures
+  .box-ComfortFeatures
+  .editFeatures,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .techFeatures
+  .box-TechFeatures
+  .editFeatures {
+  width: 100%;
+  margin: 10px 0 0 0;
+}
+
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .safetyFeatures
+  .box-safetyFeatures
+  .editFeatures
+  input,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .comfortFeatures
+  .box-ComfortFeatures
+  .editFeatures
+  input,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .techFeatures
+  .box-TechFeatures
+  .editFeatures
+  input {
+  padding: 10px 5px;
+  margin: 0 0 10px 0;
+}
+
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .safetyFeatures
+  .box-safetyFeatures
+  .editFeatures
+  .box-button,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .comfortFeatures
+  .box-ComfortFeatures
+  .editFeatures
+  .box-button,
+.BoxAddCar
+  .FeaturesCar
+  .FeaturesSafetyAndComfortAndTech
+  .techFeatures
+  .box-TechFeatures
+  .editFeatures
+  .box-botton {
+  display: flex;
+  gap: 10px;
+}
+
+.BoxAddCar .DescriptionCar .box-DescriptionCar {
+  margin: 10px 65px 0 0;
+  width: 350px;
+}
+
+.BoxAddCar .DescriptionCar .box-DescriptionCar textarea {
+  width: 95%;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  font-family: var(--main-font);
+  outline: none;
+  padding: 10px 10px 0 0;
+}
+
+.BoxAddCar .DescriptionCar .box-DescriptionCar textarea::placeholder {
+  color: var(--text-secondary);
+  font-family: var(--main-font);
+}
+
+.BoxAddCar .ImagesUploadSection {
+  margin: 10px 0 0 0;
+}
+
+.BoxAddCar .ImagesUploadSection h4 {
+  margin: 0 65px 0 0;
+}
+
+.BoxAddCar .ImagesUploadSection .upload-container {
+  margin: 10px 65px 0 0;
+}
+
+.BoxAddCar .ImagesUploadSection .upload-container label {
+  padding: 5px 15px;
+  font-family: var(--main-font);
+  border: 1px solid transparent;
+  outline: none;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+}
+
+.BoxAddCar .ImagesUploadSection .upload-container label:hover {
+  background: var(--accent-color);
+  color: var(--accent-text);
+}
+
+.BoxAddCar form .box-button-submit {
+  display: flex;
+  justify-content: center;
+}
+.BoxAddCar form .box-button-submit button {
+  margin: 20px 0;
+  padding: 10px 0;
+  width: 90%;
+  font-family: var(--main-font);
+  outline: none;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.BoxAddCar form .box-button-submit button:hover {
+  border: 1px solid transparent;
+  background: var(--accent-color);
+  color: var(--accent-text);
+}
+
+/* Start Media */
+@media (max-width: 869px) {
+  .BoxAddCar .infoCarAndinfoEngine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+  .BoxAddCar .infoCarAndinfoEngine .infoCar .BoxInputinfoCar,
+  .BoxAddCar .infoCarAndinfoEngine .infoEngine .BoxInputinfoEngine {
+    width: 650px;
+  }
+}
+
+@media (max-width: 729px) {
+  .BoxAddCar .infoCarAndinfoEngine .infoCar .BoxInputinfoCar,
+  .BoxAddCar .infoCarAndinfoEngine .infoEngine .BoxInputinfoEngine {
+    width: 450px;
+  }
+}
+@media (max-width: 600px) {
+  .BoxAddCar .infoCarAndinfoEngine .infoCar .BoxInputinfoCar,
+  .BoxAddCar .infoCarAndinfoEngine .infoEngine .BoxInputinfoEngine {
+    width: 300px;
+  }
+  .BoxAddCar
+    .FeaturesCar
+    .FeaturesSafetyAndComfortAndTech
+    .safetyFeatures
+    .box-safetyFeatures,
+  .BoxAddCar
+    .FeaturesCar
+    .FeaturesSafetyAndComfortAndTech
+    .comfortFeatures
+    .box-ComfortFeatures,
+  .BoxAddCar
+    .FeaturesCar
+    .FeaturesSafetyAndComfortAndTech
+    .techFeatures
+    .box-TechFeatures {
+    width: 300px;
+  }
+  .BoxAddCar .DescriptionCar .box-DescriptionCar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+  }
+  .BoxAddCar .DescriptionCar .box-DescriptionCar textarea {
+    width: 80%;
+  }
+}
+/* End Media */
+.swal-loading-popup {
+  background: var(--bg-secondary, #ffffff) !important;
+  color: var(--text-primary, #212529) !important;
+  border-radius: 10px !important;
+  border: 1px solid var(--border-color, #dee2e6) !important;
+  box-shadow: var(--shadow-lg) !important;
+  padding: 20px 15px !important;
+  min-height: 40px !important;
+}
+
+.swal-loading-title {
+  color: var(--text-primary, #212529) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+}
+
+/* لون دائرة التحميل */
+.swal-loading-popup .swal2-loader {
+  border-color: var(--accent-color, #000000) transparent var(--accent-color, #000000) transparent !important;
+}
+
+
+
+
+
+
+
+
+.swal-success-popup {
+  background: var(--bg-secondary, #ffffff) !important;
+  border-radius: 10px !important;
+  border: 1px solid var(--border-color, #dee2e6) !important;
+  box-shadow: var(--shadow-lg) !important;
+  padding: 15px !important;
+  min-height: 150px !important;
+}
+
+.swal-success-title {
+  color: var(--text-primary, #212529) !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+.swal-success-text {
+  color: var(--text-secondary, #6c757d) !important;
+  font-size: 13px !important;
+}
+
+.swal-success-popup .swal2-icon {
+  margin: 5px auto !important;
+}
+
+.swal-success-popup .swal2-success-ring {
+  border-color: var(--dashboard-success, #2e7d32) !important;
+}
+
+.swal-success-popup .swal2-success-line-tip,
+.swal-success-popup .swal2-success-line-long {
+  background-color: var(--dashboard-success, #2e7d32) !important;
+}

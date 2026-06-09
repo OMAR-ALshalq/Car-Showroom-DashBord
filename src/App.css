@@ -1,0 +1,344 @@
+/* :root {
+  --btn-color: #fff;
+    --btn-bg: #f88937;
+    --btn-border-color: #f88937;
+    --btn-hover-color: #fff;
+    --btn-hover-bg: #d3742f;
+    --btn-hover-border-color: #c66e2c;
+    --btn-focus-shadow-rgb: 249, 155, 85;
+    --btn-active-color: #fff;
+    --btn-active-bg: #c66e2c;
+    --btn-active-border-color: #ba6729;
+    --btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    --btn-disabled-color: #fff;
+    --btn-disabled-bg: #f88937;
+    --btn-disabled-border-color: #f88937;
+} */
+
+:root {
+  /* اللون الأساسي - أسود صريح */
+  --btn-color: #ffffff;
+  --btn-bg: #1a1a1a;
+  --btn-border-color: #1a1a1a;
+  --color-Light: rgba(194, 193, 193, 0.5);
+  --color-black: #000000;
+  /* عند تمرير الماوس - رمادي غامق جداً */
+  --btn-hover-color: #ffffff;
+  --btn-hover-bg: #333333;
+  --btn-hover-border-color: #262626;
+
+  /* ظل التركيز - رمادي شفاف */
+  --btn-focus-shadow-rgb: 26, 26, 26;
+
+  /* عند الضغط (نشط) - أسود عميق */
+  --btn-active-color: #ffffff;
+  --color-CardCar: #3635355d;
+  --btn-active-bg: #000000;
+  --btn-active-border-color: #000000;
+  --btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.5);
+  --btn-awhitective-shadow-: 0 3px 5px rgba(194, 193, 193, 0.5);
+
+  /* حالة التعطيل - رمادي باهت */
+  --btn-disabled-color: #aaaaaa;
+  --btn-disabled-bg: #1a1a1a;
+  --btn-disabled-border-color: #1a1a1a;
+
+  --main-font: "Inter", "Cairo", sans-serif;
+}
+
+:root {
+  --bg-color-main: #f8f5f5;
+  --bg-color-gray-main: #969494;
+  --bg-color-gray-wieht: #6b6b6b;
+  --bg-color-CardCar-main: #c5c2c2;
+  --bg-color-cardCar-secondar: #848383;
+  --bg-color-wieht: #ffffff;
+  --main-font: "Inter", "Cairo", sans-serif;
+  --color-main: #000000;
+  --color-secandre: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg-color-main: #161616;
+  --bg-color-gray-main: #787878;
+  --bg-color-gray-wieht: #6b6b6b;
+  --bg-color-CardCar-main: #5c5b5b;
+  --bg-color-cardCar-secondar: #848383;
+  --bg-color-wieht: #ffffff;
+  --color-main: #ffffff;
+  --color-secandre: #000000;
+  --main-font: "Inter", "Cairo", sans-serif;
+}
+
+:root {
+  --main-font: "Inter", "Cairo", sans-serif;
+  --main-color: #fff;
+  --secandre-color: #000;
+  --color-gray: #6b6b6b;
+  --color-gray-Light: #bbb8b8;
+  --color-CardCar-main: #c5c2c2;
+  --bg-color-gray-main: #969494;
+  --color-gray-TOW: #6b6b6b;
+}
+
+[data-theme="dark"] {
+  --main-font: "Inter", "Cairo", sans-serif;
+  --main-color: #000;
+  --secandre-color: #fff;
+  --color-gray: #6b6b6b;
+  --color-gray-Light: #6b6b6b;
+  --color-CardCar-main: #5c5b5b;
+  --bg-color-gray-main: #787878;
+  --color-gray-TOW: #424242;
+}
+
+/* ********************************************* */
+:root {
+  /* ألوان الخلفيات - Light Mode */
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e9ecef;
+
+  /* ألوان النصوص - Light Mode */
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+
+  /* ألوان الحدود - Light Mode */
+  --border-color: #dee2e6;
+
+  /* ألوان الـ Box Shadow */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
+
+  /* ألوان التأكيد (Accent) - الأسود في الوضع الفاتح */
+  --accent-color: #000000;
+  --accent-text: #ffffff;
+
+  --transition: 0.3s ease;
+  /* ألوان حالة خاصة بالـ Dashboard */
+  --dashboard-success: #2e7d32;
+  --dashboard-warning: #f57f17;
+  --dashboard-error: #c62828;
+  --dashboard-info: #1565c0;
+
+  /* خلفيةDashboard */
+  --dashboard-bg: #f1f3f5; /* أغمق قليلاً من bg-primary */
+}
+
+:root {
+  --login-bg-start: #0a0a0a;
+  --login-bg-mid: #1a1a1a;
+  --login-bg-end: #0d0d0d;
+  --login-card-bg: rgba(255, 255, 255, 0.03);
+  --login-border: rgba(255, 255, 255, 0.08);
+  --login-input-bg: rgba(255, 255, 255, 0.03);
+  --login-text: #ffffff;
+  --login-text-secondary: rgba(255, 255, 255, 0.6);
+  --login-accent: #ffffff;
+  --login-accent-hover: #e0e0e0;
+}
+
+[data-theme="dark"] {
+  /* ألوان الخلفيات - Dark Mode */
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #2c2c2c;
+
+  /* ألوان النصوص - Dark Mode */
+  --text-primary: #e9ecef;
+  --text-secondary: #adb5bd;
+
+  /* ألوان الحدود - Dark Mode */
+  --border-color: #3a3a3a;
+
+  /* ألوان الـ Box Shadow - Dark Mode */
+  --shadow-sm:
+    0 1px 3px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --shadow-md:
+    0 4px 8px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-lg:
+    0 8px 20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+  /* ألوان التأكيد (Accent) - الأبيض في الوضع الداكن */
+  --accent-color: #ffffff;
+  --accent-text: #000000;
+
+  /* ألوان حالة خاصة بالـ Dashboard */
+  --dashboard-success: #2e7d32;
+  --dashboard-warning: #f57f17;
+  --dashboard-error: #c62828;
+  --dashboard-info: #1565c0;
+  --dashboard-bg: #0d0d0d; /* أغمق من bg-primary */
+}
+/* ********************************************* */
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  font-family: var(--main-font);
+  -webkit-font-smoothing: antialiased;
+  /*لجعلالخطأنعمعلىالشاشات*/
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.02em;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  background: var(--bg-primary);
+}
+
+h1,
+h2,
+h3,
+.logo {
+  font-weight: 800; /* عريض جداً للعناوين */
+  letter-spacing: -0.05em;
+  color: #ffffff; /* بما أن الخلفية سوداء */
+}
+
+label {
+  font-weight: 800; /* عريض جداً للعناوين */
+  letter-spacing: -0.05em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.Box {
+  width: 100%;
+  height: 100vh;
+}
+
+.continer {
+  width: 100%;
+  height: 100vh;
+}
+
+
+.swal2-popup {
+  background: var(--bg-secondary, #ffffff) !important;
+  color: var(--text-primary, #212529) !important;
+}
+
+.swal2-title {
+  color: var(--text-primary, #212529) !important;
+}
+
+.swal2-html-container {
+  color: var(--text-primary, #212529) !important;
+}
+
+.swal2-confirm {
+  background: var(--accent-color, #1a1a1a) !important;
+  color: var(--accent-text, #ffffff) !important;
+}
+
+
+
+
+
+
+
+/* ============================================
+   أنميشن موحد لجميع القوائم المنسدلة
+   ============================================ */
+
+/* عند ظهور القائمة */
+.dropdown-list,
+.select-dropdown-list,
+.custom-dropdown-list,
+.custom-dropdown-list-Model,
+.custom-dropdown-list-BodyType,
+.dropdown-list-items {
+  animation: dropdownOpen 1.0s cubic-bezier(0.25, 0.8, 0.25, 1.2) forwards;
+  transform-origin: top center;
+  -webkit-animation: dropdownOpen 1.0s cubic-bezier(0.25, 0.8, 0.25, 1.2) forwards;
+}
+
+/* حركة الفتح */
+@keyframes dropdownOpen {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.95) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+    -webkit-transform: scaleY(1) translateY(0);
+    -moz-transform: scaleY(1) translateY(0);
+    -ms-transform: scaleY(1) translateY(0);
+    -o-transform: scaleY(1) translateY(0);
+}
+}
+
+/* عند إغلاق القائمة - أضف هذه الكلاس عند الإغلاق */
+.dropdown-closing {
+  animation: dropdownClose 0.2s ease-in forwards;
+  -webkit-animation: dropdownClose 0.2s ease-in forwards;
+}
+
+@keyframes dropdownClose {
+  0% {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(0.95) translateY(-5px);
+  }
+}
+
+/* حركة السهم */
+.rotate-icon {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease;
+}
+
+
+
+
+/* ============================================
+   أنيميشن FloatingDiv (يظهر للأعلى)
+   ============================================ */
+.FloatingDiv {
+  animation: floatingOpen 0.2s cubic-bezier(0.25, 0.8, 0.25, 1.2) forwards;
+  transform-origin: bottom center;
+}
+
+
+.FloatingDiv.floating-closing {
+  animation: floatingClose 0.15s ease-in forwards;
+}
+
+@keyframes floatingOpen {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.95) translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+}
+
+@keyframes floatingClose {
+  0% {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(0.95) translateY(5px);
+  }
+}
