@@ -7,6 +7,7 @@ import { HiSun } from "react-icons/hi";
 import { IoSunnySharp } from "react-icons/io5";
 import { FaUserTie } from "react-icons/fa6";
 import { Outlet, Link, useLocation } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { FaUser } from "react-icons/fa6";
 import { IoCarSport } from "react-icons/io5";
 import { FaUserGroup } from "react-icons/fa6";
@@ -162,15 +163,16 @@ export default function Hero() {
                 </div>
               </div>
               <div className="Links-Box" dir="rtl">
-                <Link to="allCar">
+                <HashLink smooth to="allCar#AllCar">
                   <div className="LinkCar">
                     <IoCarSport className="Links-Icon" />
                     السيارات
                   </div>
-                </Link>
+                </HashLink>
 
-                <Link
-                  to="alluser"
+                <HashLink
+                smooth
+                  to="alluser#AllUser"
                   onClick={(e) => {
                     if (userRole === "user") {
                       e.preventDefault(); // يمنع الانتقال إلى الصفحة
@@ -185,9 +187,9 @@ export default function Hero() {
                     <FaUserGroup className="Links-Icon" />
                     المستدمين
                   </div>
-                </Link>
-                <Link
-                  to="Classification"
+                </HashLink>
+                <HashLink
+                  to="Classification#Headr"
                   onClick={(e) => {
                     if (userRole === "user") {
                       e.preventDefault(); // يمنع الانتقال إلى الصفحة
@@ -202,7 +204,7 @@ export default function Hero() {
                     <BiSolidCategory className="Links-Icon" />
                     التصنيفات
                   </div>
-                </Link>
+                </HashLink>
                 <Link to="/login" onClick={handleLogout}>
                   <div className="SignOut">
                     <GoSignOut className="Links-Icon" />

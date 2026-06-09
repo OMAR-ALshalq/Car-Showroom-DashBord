@@ -182,7 +182,7 @@ export default function AllCar() {
 
   return (
     <div className="BoxAllCar">
-      <div className="filterAndAddCar" dir="rtl">
+      <div className="filterAndAddCar" id="AllCar" dir="rtl">
         <Link to="/Dashbord/allcar/addCar">اضافة سيارة</Link>
         <div className="filter-container" dir="rtl">
           <div className="BoxSearch">
@@ -293,167 +293,170 @@ export default function AllCar() {
         ) : filteredCars.length === 0 ? (
           <div className="no-results">لا توجد سيارات تطابق بحثك</div>
         ) : (
-          filteredCars.slice().reverse().map((car) => (
-            <div className="CardCar" key={car._id}>
-              <div className="infoCar">
-                <div className="CarimagAndinfo">
-                  <div className="CarImage">
-                    <img src={car.images} />
+          filteredCars
+            .slice()
+            .reverse()
+            .map((car) => (
+              <div className="CardCar" key={car._id}>
+                <div className="infoCar">
+                  <div className="CarimagAndinfo">
+                    <div className="CarImage">
+                      <img src={car.images} />
+                    </div>
+                    <div className="Carinfo">
+                      <h3>
+                        {car.brand}-{car.model}
+                      </h3>
+                      <h5>{car.year}</h5>
+                      <h4>
+                        {car.mileage.value} / {car.mileage.unit}
+                      </h4>
+                      <h5>{car.color}</h5>
+                      <h5>
+                        {car.engine.transmission === "automatic"
+                          ? "اوتوماتيك"
+                          : car.engine.transmission === "normal"
+                            ? "غيار عادي "
+                            : "غير محدد"}
+                      </h5>
+                      <h5>
+                        {car.engine.fulType === "gasoline"
+                          ? "بانزين"
+                          : car.engine.fulType === "diesel"
+                            ? "ديزل"
+                            : car.engine.fulType === "electricity"
+                              ? "كهربائية"
+                              : car.engine.fulType === "Hybrid"
+                                ? "هايبرد"
+                                : "غير محدد"}
+                      </h5>
+                    </div>
                   </div>
-                  <div className="Carinfo">
-                    <h3>
-                      {car.brand}-{car.model}
-                    </h3>
-                    <h5>{car.year}</h5>
-                    <h4>
-                      {car.mileage.value} / {car.mileage.unit}
+                  <div className="CarStatus">
+                    <h4
+                      style={{
+                        color:
+                          car.status === "sold"
+                            ? "rgb(228, 13, 13)"
+                            : car.status === "available"
+                              ? "rgb(44, 109, 44)"
+                              : "black",
+                        backgroundColor:
+                          car.status === "sold"
+                            ? "rgb(221, 140, 140)"
+                            : car.status === "available"
+                              ? "rgb(167, 224, 167)"
+                              : "black"
+                      }}
+                    >
+                      {car.status === "available" ? "متوفرة" : "غير متوفرة"}
                     </h4>
-                    <h5>{car.color}</h5>
-                    <h5>
-                      {car.engine.transmission === "automatic"
-                        ? "اوتوماتيك"
-                        : car.engine.transmission === "normal"
-                          ? "غيار عادي "
-                          : "غير محدد"}
-                    </h5>
-                    <h5>
-                      {car.engine.fulType === "gasoline"
-                        ? "بانزين"
-                        : car.engine.fulType === "diesel"
-                          ? "ديزل"
-                          : car.engine.fulType === "electricity"
-                            ? "كهربائية"
-                            : car.engine.fulType === "Hybrid"
-                              ? "هايبرد"
-                              : "غير محدد"}
-                    </h5>
                   </div>
-                </div>
-                <div className="CarStatus">
-                  <h4
-                    style={{
-                      color:
-                        car.status === "sold"
-                          ? "rgb(228, 13, 13)"
-                          : car.status === "available"
-                            ? "rgb(44, 109, 44)"
-                            : "black",
-                      backgroundColor:
-                        car.status === "sold"
-                          ? "rgb(221, 140, 140)"
-                          : car.status === "available"
-                            ? "rgb(167, 224, 167)"
-                            : "black"
-                    }}
-                  >
-                    {car.status === "available" ? "متوفرة" : "غير متوفرة"}
-                  </h4>
-                </div>
-                <div className="CarPriceAndEdite">
-                  <div className="box-QrCodeCar">
-                    <QRCodeCanvas value={car.qrCode} size={90} />
-                  </div>
-                  <div className="PraiceAndEditeCar">
-                    <div className="price">
-                      <h3>{car.price}</h3>
-                      <AiFillDollarCircle className="icon-price" />
+                  <div className="CarPriceAndEdite">
+                    <div className="box-QrCodeCar">
+                      <QRCodeCanvas value={car.qrCode} size={90} />
                     </div>
-                    <div className="buttonEditeCar">
-                      <Link to={`/Dashbord/allcar/editCar/${car._id}`}>
-                        التفاصيل
-                      </Link>
+                    <div className="PraiceAndEditeCar">
+                      <div className="price">
+                        <h3>{car.price}</h3>
+                        <AiFillDollarCircle className="icon-price" />
+                      </div>
+                      <div className="buttonEditeCar">
+                        <Link to={`/Dashbord/allcar/editCar/${car._id}`}>
+                          التفاصيل
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <hr />
-              <div className="BoxCarDetils">
-                <div className="BoxFeatures">
-                  {/* Safety */}
-                  <div
-                    className="safetyFeatures"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleToggle(car.safetyFeatures);
-                    }}
-                  >
-                    <p>ميزات الامان</p>
-                    <FaAngleUp />
-                    {activeFeatures === car.safetyFeatures && (
-                      <div
-                        className={`FloatingDiv ${closingFeatures === car.safetyFeatures ? "floating-closing" : ""}`}
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {car.safetyFeatures.map((f, index) => (
-                          <span key={index}>{f}</span>
-                        ))}
-                      </div>
-                    )}
+                <hr />
+                <div className="BoxCarDetils">
+                  <div className="BoxFeatures">
+                    {/* Safety */}
+                    <div
+                      className="safetyFeatures"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleToggle(car.safetyFeatures);
+                      }}
+                    >
+                      <p>ميزات الامان</p>
+                      <FaAngleUp />
+                      {activeFeatures === car.safetyFeatures && (
+                        <div
+                          className={`FloatingDiv ${closingFeatures === car.safetyFeatures ? "floating-closing" : ""}`}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {car.safetyFeatures.map((f, index) => (
+                            <span key={index}>{f}</span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    {/* Comfort */}
+                    <div
+                      className="comfortFeatures"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleToggle(car.comfortFeatures);
+                      }}
+                    >
+                      <p>ميزات الراحة</p>
+                      <FaAngleUp />
+                      {activeFeatures === car.comfortFeatures && (
+                        <div
+                          className={`FloatingDiv ${closingFeatures === car.comfortFeatures ? "floating-closing" : ""}`}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {car.comfortFeatures.map((f, index) => (
+                            <span key={index}>{f}</span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    {/* Tech */}
+                    <div
+                      className="techFeatures"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleToggle(car.techFeatures);
+                      }}
+                    >
+                      <p>ميزات التكنلوجيا</p>
+                      <FaAngleUp />
+                      {activeFeatures === car.techFeatures && (
+                        <div
+                          className={`FloatingDiv ${closingFeatures === car.techFeatures ? "floating-closing" : ""}`}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {car.techFeatures.map((f, index) => (
+                            <span key={index}>{f}</span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  {/* Comfort */}
-                  <div
-                    className="comfortFeatures"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleToggle(car.comfortFeatures);
-                    }}
-                  >
-                    <p>ميزات الراحة</p>
-                    <FaAngleUp />
-                    {activeFeatures === car.comfortFeatures && (
-                      <div
-                        className={`FloatingDiv ${closingFeatures === car.comfortFeatures ? "floating-closing" : ""}`}
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {car.comfortFeatures.map((f, index) => (
-                          <span key={index}>{f}</span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                  {/* Tech */}
-                  <div
-                    className="techFeatures"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleToggle(car.techFeatures);
-                    }}
-                  >
-                    <p>ميزات التكنلوجيا</p>
-                    <FaAngleUp />
-                    {activeFeatures === car.techFeatures && (
-                      <div
-                        className={`FloatingDiv ${closingFeatures === car.techFeatures ? "floating-closing" : ""}`}
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {car.techFeatures.map((f, index) => (
-                          <span key={index}>{f}</span>
-                        ))}
-                      </div>
-                    )}
+                  <div className="BoxFileDataCar">
+                    <button
+                      onClick={async () => {
+                        const { pdf } = await import("@react-pdf/renderer");
+                        const blob = await pdf(
+                          <CarPdfDocument car={car} />
+                        ).toBlob();
+                        const url = URL.createObjectURL(blob);
+                        const link = document.createElement("a");
+                        link.href = url;
+                        link.download = `${car.brand}.pdf`;
+                        link.click();
+                        URL.revokeObjectURL(url);
+                      }}
+                    >
+                      تحميل ملف السيارة
+                    </button>
                   </div>
                 </div>
-                <div className="BoxFileDataCar">
-                  <button
-                    onClick={async () => {
-                      const { pdf } = await import("@react-pdf/renderer");
-                      const blob = await pdf(
-                        <CarPdfDocument car={car} />
-                      ).toBlob();
-                      const url = URL.createObjectURL(blob);
-                      const link = document.createElement("a");
-                      link.href = url;
-                      link.download = `${car.brand}.pdf`;
-                      link.click();
-                      URL.revokeObjectURL(url);
-                    }}
-                  >
-                    تحميل ملف السيارة
-                  </button>
-                </div>
               </div>
-            </div>
-          ))
+            ))
         )}
       </div>
     </div>

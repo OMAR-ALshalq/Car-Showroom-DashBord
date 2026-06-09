@@ -72,7 +72,7 @@ export default function AllUser() {
     return matchesName && matchesRole;
   });
   return (
-    <div className="BoxAllUser">
+    <div className="BoxAllUser" id="AllUser">
       {loading && <Loader text="جاري تحميل المستخدمين..." />}
 
       {showAddUser && (
