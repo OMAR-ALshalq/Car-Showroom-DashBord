@@ -88,7 +88,7 @@ export default function Hero() {
   return (
     <div className="BoxHero">
       <div className="continer continerHero">
-        <div className="NavBarHero">
+        <div className="NavBarHero" id="NavBar">
           <div className="icon-NavBarHero">
             <h3>AlmalihMotors</h3>
           </div>
@@ -163,7 +163,7 @@ export default function Hero() {
                 </div>
               </div>
               <div className="Links-Box" dir="rtl">
-                <HashLink smooth to="allCar#AllCar">
+                <HashLink smooth to="allCar#NavBar">
                   <div className="LinkCar">
                     <IoCarSport className="Links-Icon" />
                     السيارات
@@ -171,8 +171,8 @@ export default function Hero() {
                 </HashLink>
 
                 <HashLink
-                smooth
-                  to="alluser#AllUser"
+                  smooth
+                  to="alluser#NavBar"
                   onClick={(e) => {
                     if (userRole === "user") {
                       e.preventDefault(); // يمنع الانتقال إلى الصفحة
@@ -189,7 +189,7 @@ export default function Hero() {
                   </div>
                 </HashLink>
                 <HashLink
-                  to="Classification#Headr"
+                  to="Classification#NavBar"
                   onClick={(e) => {
                     if (userRole === "user") {
                       e.preventDefault(); // يمنع الانتقال إلى الصفحة
@@ -235,15 +235,16 @@ export default function Hero() {
             <GrClose className="Closeicon" onClick={closeTags} />
           </div>
           <div className="ListLinkTags">
-            <Link to="allCar" onClick={closeTags}>
+            <HashLink smooth to="allCar#NavBar" onClick={closeTags}>
               <div className="LinkCar">
                 <IoCarSport className="Links-Icon" />
                 السيارات
               </div>
-            </Link>
+            </HashLink>
 
-            <Link
-              to="alluser"
+            <HashLink
+              smooth
+              to="alluser#NavBar"
               onClick={(e) => {
                 if (userRole === "user") {
                   e.preventDefault(); // يمنع الانتقال إلى الصفحة
@@ -259,9 +260,10 @@ export default function Hero() {
                 <FaUserGroup className="Links-Icon" />
                 المستخدمون
               </div>
-            </Link>
-            <Link
-              to="Classification"
+            </HashLink>
+            <HashLink
+              smooth
+              to="Classification#NavBar"
               onClick={(e) => {
                 if (userRole === "user") {
                   e.preventDefault(); // يمنع الانتقال إلى الصفحة
@@ -277,7 +279,7 @@ export default function Hero() {
                 <BiSolidCategory className="Links-Icon" />
                 التصنيفات
               </div>
-            </Link>
+            </HashLink>
             <Link to="/login" onClick={handleLogout}>
               <div className="SignOut">
                 <GoSignOut className="Links-Icon" />
