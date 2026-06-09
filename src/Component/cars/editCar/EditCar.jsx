@@ -418,7 +418,7 @@ export default function EditCar() {
   };
 
   return (
-    <div className="BoxEditCar">
+    <div className="BoxEditCar" id="EditCar">
       <div className="TitleBoxEditCar">
         <h3>تعديل السيارة</h3>
       </div>

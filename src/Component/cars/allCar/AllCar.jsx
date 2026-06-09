@@ -7,6 +7,7 @@ import { QRCodeCanvas } from "qrcode.react";
 import { FaAngleUp } from "react-icons/fa6";
 import { FiSearch } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
+import { HashLink } from "react-router-hash-link";
 
 const API_URL = "https://car-showroom-server.onrender.com";
 
@@ -362,9 +363,12 @@ export default function AllCar() {
                         <AiFillDollarCircle className="icon-price" />
                       </div>
                       <div className="buttonEditeCar">
-                        <Link to={`/Dashbord/allcar/editCar/${car._id}`}>
+                        <HashLink
+                        smooth
+                          to={`/Dashbord/allcar/editCar/${car._id}#EditCar`}
+                        >
                           التفاصيل
-                        </Link>
+                        </HashLink>
                       </div>
                     </div>
                   </div>
