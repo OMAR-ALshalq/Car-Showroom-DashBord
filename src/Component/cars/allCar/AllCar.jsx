@@ -1,5 +1,5 @@
 import "./AllCar.css";
-import CarPdfDocument from "../CarPdfDocument"
+import CarPdfDocument from "../CarPdfDocument";
 import { AiFillDollarCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -10,7 +10,6 @@ import { IoIosArrowDown } from "react-icons/io";
 import { HashLink } from "react-router-hash-link";
 
 const API_URL = "https://car-showroom-server.onrender.com";
-
 
 export default function AllCar() {
   const [activeFeatures, setActiveFeatures] = useState(null);
@@ -59,18 +58,16 @@ export default function AllCar() {
     const fetchCars = async () => {
       try {
         setLoading(true);
-
-        // جلب البيانات من API دائماً
         const response = await fetch(`${API_URL}/api/cars`);
         const data = await response.json();
 
-        // تحديث state و sessionStorage
-        setCars(data);
+        // تخزين البيانات في sessionStorage
         sessionStorage.setItem("carsData", JSON.stringify(data));
+        setCars(data);
       } catch (error) {
         console.error("خطأ في جلب السيارات:", error);
 
-        // في حالة فشل الاتصال، استخدم البيانات المخزنة إذا وجدت
+        // في حالة فشل الاتصال، استخدم البيانات المخزنة
         const cachedData = sessionStorage.getItem("carsData");
         if (cachedData) {
           setCars(JSON.parse(cachedData));
@@ -80,13 +77,17 @@ export default function AllCar() {
       }
     };
 
-    // التحقق من وجود بيانات في sessionStorage للتحميل السريع
+    // دائماً جلب من API (سواء F5 أو تنقل عادي)
+    // لكن إذا كانت البيانات موجودة في sessionStorage، اعرضها فوراً
     const cachedData = sessionStorage.getItem("carsData");
+
     if (cachedData) {
+      // عرض البيانات المخزنة فوراً
       setCars(JSON.parse(cachedData));
       setLoading(false);
     }
 
+    // ثم جلب التحديثات من API في الخلفية
     fetchCars();
   }, []);
 
@@ -399,7 +400,7 @@ export default function AllCar() {
                       </div>
                       <div className="buttonEditeCar">
                         <HashLink
-                        smooth
+                          smooth
                           to={`/Dashbord/allcar/editCar/${car._id}#EditCar`}
                         >
                           التفاصيل
