@@ -189,8 +189,8 @@
   display: block;
   text-align: center;
   /*background: red;
-  */margin-bottom: -10px;
-
+  */
+  margin-bottom: -10px;
 }
 
 @keyframes carBounce {
@@ -205,11 +205,12 @@
 
 .continerLogIN .BoxFormLogin form .car-logo-svg {
   width: 50px;
-  /*تمالتغييرمن90pxإلى50px*/height: auto;
+  /*تمالتغييرمن90pxإلى50px*/
+  height: auto;
   display: block;
   margin: 0 auto -10px;
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
-    animation: carBounce 2s ease-in-out infinite;
+  animation: carBounce 2s ease-in-out infinite;
   -webkit-animation: carBounce 2s ease-in-out infinite;
 }
 
@@ -262,7 +263,7 @@
    حقول الإدخال
    ============================================ */
 .continerLogIN .BoxFormLogin form .boxInput {
-  width: 100%;
+  width: 90%;
   padding: 12px 16px;
   display: flex;
   /* align-items: center; */
@@ -478,17 +479,9 @@ input:-webkit-autofill:active {
 
 /* لون دائرة التحميل */
 .swal-loading-popup .swal2-loader {
-  border-color: var(--accent-color, #000000) transparent var(--accent-color, #000000) transparent !important;
+  border-color: var(--accent-color, #000000) transparent
+    var(--accent-color, #000000) transparent !important;
 }
-
-
-
-
-
-
-
-
-
 
 .swal-success-popup {
   background: var(--bg-secondary, #ffffff) !important;
@@ -522,17 +515,6 @@ input:-webkit-autofill:active {
 .swal-success-popup .swal2-success-line-long {
   background-color: var(--dashboard-success, #2e7d32) !important;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .swal-error-popup {
   background: var(--bg-secondary, #ffffff) !important;
