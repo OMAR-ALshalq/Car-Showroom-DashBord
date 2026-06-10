@@ -196,7 +196,7 @@ export default function EditUser({ closeModal, refreshData, userData }) {
           <button type="button" className="btn-delete" onClick={handleDelete}>
             حذف المستخدم
           </button>
-          <button type="submit" disabled={loading}>
+          <button className="btn-addUser" type="submit" disabled={loading}>
             {loading ? "جاري الحفظ..." : "تحديث البيانات"}
           </button>
         </form>

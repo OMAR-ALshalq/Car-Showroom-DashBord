@@ -38,6 +38,15 @@
   box-shadow: var(--shadow-sm);
 }
 
+.BoxAllUser .BoxAddUser .btn-AddUser {
+  background: green;
+  color: white;
+}
+
+.BoxAllUser .BoxAddUser .btn-AddUser:hover{
+  background: rgb(167, 224, 167);
+}
+
 .BoxAllUser .BoxAddUser .filtercontiner {
   display: flex;
   flex: 1;
@@ -306,6 +315,19 @@
   @media (max-width: 600px) {
     .BoxAllUser .BoxCardUser {
       flex-direction: column;
+    }
+    .BoxAddUser .filtercontiner {
+      /* background: red; */
+      padding: 0 0 0 0;
+      width:100%;
+    }
+    .BoxAllUser .BoxAddUser .filtercontiner .filterBoxButton {
+      /* background: green; */
+      width: 91%;
+    }
+    .BoxAllUser .filtercontiner .SearchBox {
+      /* background: green; */
+      width: 85%;
     }
   }
 }

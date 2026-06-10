@@ -200,7 +200,7 @@ export default function AddUser({ closeModal, refreshData }) {
             <h4>User</h4>
           </div>
 
-          <button disabled={loading}>
+          <button className="btn-addUser" disabled={loading}>
             {loading ? "جاري الإضافة..." : "اضافة"}
           </button>
         </form>

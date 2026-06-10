@@ -8,7 +8,6 @@
   color: var(--text-primary);
 }
 
-
 .BoxAddCar .ImagesUploadSection h4 {
   color: var(--text-primary);
 }
@@ -19,14 +18,13 @@
   align-items: center;
   width: 100%;
   gap: 10px;
-  margin: 20px 15px 0 55px ;
+  margin: 20px 15px 0 55px;
   overflow-x: scroll;
 }
 
 .BoxAddCar .ImagesUploadSection .images-preview .image-item {
   position: relative;
 }
-
 
 .BoxAddCar .ImagesUploadSection .images-preview .image-item img {
   width: 100px;
@@ -52,12 +50,6 @@
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
 }
-
-
-
-
-
-
 
 .BoxAddCar .infoCarAndinfoEngine,
 .BoxAddCar .FeaturesCar {
@@ -308,7 +300,7 @@
 .BoxAddCar .FeaturesCar h4,
 .BoxAddCar .DescriptionCar h4 {
   width: 100%;
-  margin: 0 65px 0 0;
+  margin: 0 20px 0 0;
   color: var(--text-primary);
 }
 
@@ -808,8 +800,8 @@
   width: 90%;
   font-family: var(--main-font);
   outline: none;
-  color: var(--text-primary);
-  background: var(--bg-primary);
+  color: white;
+  background: green;
   border: 1px solid var(--border-color);
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -826,8 +818,8 @@
 
 .BoxAddCar form .box-button-submit button:hover {
   border: 1px solid transparent;
-  background: var(--accent-color);
-  color: var(--accent-text);
+  background: rgb(167, 224, 167);
+  color: black;
 }
 
 /* Start Media */
@@ -872,7 +864,8 @@
     .FeaturesSafetyAndComfortAndTech
     .techFeatures
     .box-TechFeatures {
-    width: 300px;
+    width: 85%;
+    margin: 0 2px 0;
   }
   .BoxAddCar .DescriptionCar .box-DescriptionCar {
     display: flex;
@@ -904,15 +897,9 @@
 
 /* لون دائرة التحميل */
 .swal-loading-popup .swal2-loader {
-  border-color: var(--accent-color, #000000) transparent var(--accent-color, #000000) transparent !important;
+  border-color: var(--accent-color, #000000) transparent
+    var(--accent-color, #000000) transparent !important;
 }
-
-
-
-
-
-
-
 
 .swal-success-popup {
   background: var(--bg-secondary, #ffffff) !important;

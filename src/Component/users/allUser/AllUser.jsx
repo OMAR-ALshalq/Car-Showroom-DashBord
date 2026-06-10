@@ -109,7 +109,7 @@ export default function AllUser() {
         </div>
       )}
       <div className="BoxAddUser" dir="rtl">
-        <button onClick={() => setShowAddUser(true)}>اضافة مستخدم</button>
+        <button className="btn-AddUser" onClick={() => setShowAddUser(true)}>اضافة مستخدم</button>
         <div className="filtercontiner">
           <div className="filterBoxButton">
             <button

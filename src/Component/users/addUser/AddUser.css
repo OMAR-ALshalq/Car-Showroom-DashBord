@@ -93,7 +93,7 @@
   */font-family: var(--main-font);
   outline: none;
   color: var(--main-color);
-  background: var(--secandre-color);
+  /* background: var(--secandre-color); */
   border: 1px solid var(--secandre-color);
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -108,12 +108,14 @@
   -o-transition: 0.3s;
 }
 
-.BoxAddNewUser .BoxFormAddUser form button:hover {
+/* .BoxAddNewUser .BoxFormAddUser form button:hover {
   background: var(--secandre-color);
   color: var(--main-color);
   border: 1px solid var(--main-color);
   box-shadow: 4px 3px 7px 2px var(--secandre-color);
-}.BoxAddNewUser {
+} */
+
+.BoxAddNewUser {
   height: 100%;
   margin: 20px 0 0 0;
 }
@@ -190,13 +192,13 @@
 }
 
 
-.BoxAddNewUser .BoxFormAddUser form button {
+.BoxAddNewUser .BoxFormAddUser form .btn-addUser {
   padding: 5px 0;
   font-family: var(--main-font);
   outline: none;
-  color: var(--accent-text);
-  background: var(--accent-color);
-  border: 1px solid var(--accent-color);
+  color: white;
+  background: green;
+  border: none;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -210,9 +212,20 @@
   -o-transition: 0.3s;
 }
 
-.BoxAddNewUser .BoxFormAddUser form button:hover {
-  background: transparent;
-  color: var(--accent-color);
-  border: 1px solid var(--accent-color);
-  box-shadow: var(--shadow-sm);
+.BoxAddNewUser .BoxFormAddUser form .btn-addUser:hover {
+  background: rgb(167, 224, 167);
+  color: black;
+  /* border: 1px solid var(--accent-color); */
+  box-shadow: none;
+}
+
+.BoxAddNewUser .BoxFormAddUser form .btn-delete {
+  background: red;
+  border: none;
+  color: white;
+}
+
+.BoxAddNewUser .BoxFormAddUser form .btn-delete:hover {
+    background: rgb(221, 140, 140);
+color: black;
 }

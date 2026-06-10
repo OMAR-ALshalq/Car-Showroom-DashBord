@@ -56,6 +56,27 @@
   .BoxMainClassification
   .HeaderSection
   .FilterAndAddClass
+  .btnAddClass {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: green;
+    color: white;
+  }
+
+  .BoxClassification
+  .BoxMainClassification
+  .HeaderSection
+  .FilterAndAddClass
+  .btnAddClass:hover {
+    background: rgb(167, 224, 167);
+    color: black;
+  }
+
+.BoxClassification
+  .BoxMainClassification
+  .HeaderSection
+  .FilterAndAddClass
   button:hover {
   background: var(--accent-color);
   color: var(--accent-text);
@@ -334,7 +355,7 @@
 .table-cell .buttonEdit {
   text-decoration: none;
   padding: 0px 8px;
-  color: #000000;
+  color: white;
   border: 1px solid transparent;
   background: var(--dashboard-warning);
   border-radius: 5px;
@@ -517,8 +538,8 @@
 
 .btnSave {
   flex: 1;
-  background: var(--bg-primary);
-  color: var(--text-primary);
+  background: green;
+  color: white;
   border: 1px solid var(--border-color);
   padding: 12px;
   margin: 0 0 12px 0;
@@ -532,16 +553,17 @@
 }
 
 .btnSave:hover {
-  background: var(--accent-color);
-  color: var(--accent-text);
+  background: rgb(167, 224, 167);
+  color: black;
 }
 
 .btnCancel {
   flex: 1;
   margin: 0 0 12px 0;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  border: 2px solid var(--border-color);
+  background: red;
+  color: white;
+  border: none;
+  /* border: 2px solid var(--border-color); */
   padding: 12px;
   border-radius: 8px;
   cursor: pointer;
@@ -553,9 +575,9 @@
 }
 
 .btnCancel:hover {
-  border: 2px solid var(--accent-color);
-  background: var(--accent-color);
-  color: var(--accent-text);
+  /* border: 2px solid var(--accent-color); */
+  background: rgb(221, 140, 140);
+  color: black;
 }
 
 .mini-logo {
@@ -585,9 +607,9 @@
 .btnUpdate {
   flex: 1;
   margin: 0 0 12px 0;
-  background: var(--accent-color);
-  color: var(--accent-text);
-  border: 1px solid var(--accent-color);
+  background: green;
+  color: white;
+  border: none;
   padding: 12px;
   border-radius: 8px;
   cursor: pointer;
@@ -599,9 +621,9 @@
 }
 
 .btnUpdate:hover {
-  color: var(--accent-color);
-  background: transparent;
-  border: 1px solid var(--accent-color);
+  color: black;
+  background: rgb(167, 224, 167);
+  /* border: 1px solid var(--accent-color); */
 }
 
 .no-image-placeholder {
@@ -722,7 +744,7 @@
   .BoxClassification .BoxCard-classification .Card .ButtonCard .buttonEdit {
     text-decoration: none;
     padding: 2px 6px;
-    color: #000000;
+    color: white;
     border: 1px solid transparent;
     border-radius: 5px;
     background: var(--dashboard-warning);
@@ -802,8 +824,8 @@
   position: fixed;
   top: 320px;
   margin-left: 10px;
-  width: 150px;
-  height: 150px;
+  width: 40%;
+  height: 190px;
   background-color: var(--bg-secondary);
   border-right: 1px solid var(--border-color);
   box-shadow: var(--shadow-lg);
@@ -908,7 +930,7 @@
 }
 
 .filter-sidebar-wrapper .sidebar-body .btn-reset-filter {
-  margin: 5px 5px 0 0;
+  margin: 10px 5px 0 0;
   background: var(--bg-tertiary);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
@@ -919,6 +941,7 @@
   -ms-border-radius: 2px;
   -o-border-radius: 2px;
   cursor: pointer;
+  padding: 2px 5px;
 }
 
 .animateFilterShow {

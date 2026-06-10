@@ -630,6 +630,27 @@
   color: var(--accent-text);
 }
 
+.BoxEditCar form .box-button-submit .btn-delete {
+  background: red;
+  color: white;
+}
+
+.BoxEditCar form .box-button-submit .btn-delete:hover {
+  background: rgb(221, 140, 140);
+  color: black;
+}
+.BoxEditCar form .box-button-submit .btnSave {
+  background: green;
+  color: white;
+}
+
+.BoxEditCar form .box-button-submit .btnSave:hover {
+  background: rgb(167, 224, 167);
+  color: black;
+}
+
+
+
 /* Start Media */
 @media (max-width: 989px) {
   .BoxEditCar .BoxFormEditCar .imageAndinfoCar {
@@ -728,17 +749,15 @@
   }
 
   .BoxEditCar .disCar textarea {
-    width: 330px;
+    width: 90%;
   }
-    .BoxEditCar .discCarAndQrCode .BoxQRCode {
+  .BoxEditCar .discCarAndQrCode .BoxQRCode {
     margin: 20px 20px 30px 0;
     display: block;
   }
-
 }
 
 /* End Media */
-
 
 /* أنماط إضافة وتعديل الميزات */
 .add-feature-container {
@@ -833,8 +852,8 @@
   opacity: 1;
 }
 
-.btn-edit-feature{
-  background:  rgb(255, 238, 0);
+.btn-edit-feature {
+  background: #ff9800;
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   padding: 5px 8px;
@@ -868,7 +887,7 @@
 }
 
 .btn-delete-feature:hover {
- background: var(--accent-color);
+  background: var(--accent-color);
   color: var(--accent-text);
   border-color: var(--accent-color);
 }
@@ -936,9 +955,9 @@
 }
 
 .btn-save-feature:hover {
-  background: #4CAF50;
+  background: #4caf50;
   color: white;
-  border-color: #4CAF50;
+  border-color: #4caf50;
 }
 
 .btn-cancel-feature:hover {
@@ -952,31 +971,31 @@
   .feature-view-actions {
     opacity: 1;
   }
-  
+
   .feature-view-container {
     flex-direction: column;
     gap: 5px;
   }
-  
+
   .feature-view-actions {
     width: 100%;
     justify-content: flex-start;
   }
-  
+
   .btn-edit-feature,
   .btn-delete-feature {
     padding: 8px 12px;
     font-size: 16px;
   }
-  
+
   .feature-edit-container {
     padding: 12px;
   }
-  
+
   .feature-edit-actions {
     flex-wrap: wrap;
   }
-  
+
   .btn-save-feature,
   .btn-delete-feature,
   .btn-cancel-feature {
@@ -985,11 +1004,11 @@
     flex: 1;
     min-width: 60px;
   }
-  
+
   .add-feature-input-group {
     flex-direction: column;
   }
-  
+
   .btn-add-feature {
     width: 100%;
     padding: 10px;

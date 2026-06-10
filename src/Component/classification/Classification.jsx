@@ -293,7 +293,7 @@ export default function Classification() {
           <h2>التصنيفات</h2>
           <div className="FilterAndAddClass">
             <button className="btnAddClass" onClick={() => setShowModal(true)}>
-              <FaPlusCircle /> إضافة تصنيف جديد
+              <FaPlusCircle className="IconAdd"/> إضافة تصنيف جديد
             </button>
             <div className="filter">
               {/* Brand */}
