@@ -39,19 +39,54 @@ export default function AllCar() {
   const [selectedModel, setSelectedModel] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
 
+  // useEffect(() => {
+  //   const fetchCars = async () => {
+  //     try {
+  //       setLoading(true);
+  //       const response = await fetch(`${API_URL}/api/cars`);
+  //       const data = await response.json();
+  //       setCars(data);
+  //     } catch (error) {
+  //       console.error("خطأ في جلب السيارات:", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fetchCars();
+  // }, []);
+
   useEffect(() => {
     const fetchCars = async () => {
       try {
         setLoading(true);
+
+        // جلب البيانات من API دائماً
         const response = await fetch(`${API_URL}/api/cars`);
         const data = await response.json();
+
+        // تحديث state و sessionStorage
         setCars(data);
+        sessionStorage.setItem("carsData", JSON.stringify(data));
       } catch (error) {
         console.error("خطأ في جلب السيارات:", error);
+
+        // في حالة فشل الاتصال، استخدم البيانات المخزنة إذا وجدت
+        const cachedData = sessionStorage.getItem("carsData");
+        if (cachedData) {
+          setCars(JSON.parse(cachedData));
+        }
       } finally {
         setLoading(false);
       }
     };
+
+    // التحقق من وجود بيانات في sessionStorage للتحميل السريع
+    const cachedData = sessionStorage.getItem("carsData");
+    if (cachedData) {
+      setCars(JSON.parse(cachedData));
+      setLoading(false);
+    }
+
     fetchCars();
   }, []);
 
