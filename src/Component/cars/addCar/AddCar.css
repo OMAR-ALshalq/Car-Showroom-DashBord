@@ -781,8 +781,8 @@
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
-  color: var(--text-primary);
-  background: var(--bg-primary);
+  color: white;
+  background: green;
 }
 
 .BoxAddCar .ImagesUploadSection .upload-container label:hover {
@@ -877,6 +877,12 @@
   .BoxAddCar .DescriptionCar .box-DescriptionCar textarea {
     width: 80%;
   }
+  .BoxAddCar .ImagesUploadSection h4 {
+    margin: 0 20px 0 0;
+}
+.BoxAddCar .ImagesUploadSection .upload-container label {
+  margin: 0 -35px 0 0 ;
+}
 }
 /* End Media */
 .swal-loading-popup {
