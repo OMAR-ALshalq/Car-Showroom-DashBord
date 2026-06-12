@@ -6,6 +6,7 @@ import { FaLock } from "react-icons/fa6";
 import { IoEyeOffOutline, IoEye } from "react-icons/io5";
 import { FaPhoneSquareAlt } from "react-icons/fa";
 import { showSuccess, showError } from "../../toast/Toast";
+import { FaSpinner } from "react-icons/fa";
 
 const API_URL = "https://car-showroom-server.onrender.com";
 
@@ -153,7 +154,6 @@ export default function AddUser({ closeModal, refreshData }) {
               value={formData.password}
               onChange={handleChange}
             />
-            <FaLock className="iconPassword" />
             <div className="eye-icon" onClick={togglePasswordVisibility}>
               {showPassword ? (
                 <IoEye className="Eyeicon" />
@@ -200,8 +200,22 @@ export default function AddUser({ closeModal, refreshData }) {
             <h4>User</h4>
           </div>
 
-          <button className="btn-addUser" disabled={loading}>
-            {loading ? "جاري الإضافة..." : "اضافة"}
+          <button
+            className="btn-addUser"
+            disabled={loading}
+            style={{
+              opacity: loading ? 0.7 : 1,
+              cursor: loading ? "not-allowed" : "pointer"
+            }}
+          >
+            {loading ? (
+              <div className="Loding">
+                جاري الإضافة
+                <FaSpinner className="spinner-icon" />
+              </div>
+            ) : (
+              "اضافة"
+            )}
           </button>
         </form>
       </div>

@@ -192,8 +192,8 @@
   .imagMain
   .imagMainOverlay
   .EditImage {
-  border: 1px solid rgb(255, 238, 0);
-  background: rgb(255, 238, 0);
+  border: 1px solid var(--dashboard-warning);
+  background: var(--dashboard-warning);
   padding: 5px;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -1013,4 +1013,29 @@
     width: 100%;
     padding: 10px;
   }
+}
+
+
+
+
+.box-button-submit button:disabled {
+  background-color: #cccccc;
+  border-color: #cccccc;
+}
+
+.Loding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.spinner-icon {
+  animation: spin 1s linear infinite;
+  margin-left: 5px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

@@ -8,6 +8,7 @@ import { FiEdit2 } from "react-icons/fi";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { FaSpinner } from "react-icons/fa";
 import { showSuccess, showError, showConfirm } from "../../toast/Toast";
 
 const API_URL = "https://car-showroom-server.onrender.com";
@@ -18,6 +19,8 @@ export default function EditCar() {
   const fileInputRef = useRef(null);
   const [activeImg, setActiveImg] = useState("");
   const [uploading, setUploading] = useState(false);
+  const [deleting, setDeleting] = useState(false);
+  const [saving, setSaving] = useState(false);
   const [editingPath, setEditingPath] = useState({
     category: null,
     index: null
@@ -109,7 +112,7 @@ export default function EditCar() {
         setActiveImg(data.secure_url);
         showSuccess("تمت إضافة الصورة الجديدة بنجاح");
       }
-    // eslint-disable-next-line no-unused-vars
+      // eslint-disable-next-line no-unused-vars
     } catch (error) {
       showError("فشل رفع الصورة الجديدة");
     } finally {
@@ -149,7 +152,7 @@ export default function EditCar() {
       setCarData((prev) => ({ ...prev, images: newImages }));
       setActiveImg(data.secure_url);
       showSuccess("تم استبدال الصورة بنجاح");
-    // eslint-disable-next-line no-unused-vars
+      // eslint-disable-next-line no-unused-vars
     } catch (error) {
       showError("فشل رفع الصورة الجديدة");
     } finally {
@@ -159,6 +162,7 @@ export default function EditCar() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSaving(true);
     try {
       const response = await axios.put(
         `${API_URL}/api/edit/cars/${id}`,
@@ -166,9 +170,11 @@ export default function EditCar() {
       );
       showSuccess(response.data.message);
       setTimeout(() => navigate("/Dashbord/allCar"), 1500);
-    // eslint-disable-next-line no-unused-vars
+      // eslint-disable-next-line no-unused-vars
     } catch (error) {
       showError("فشل التعديل، تأكد من اتصال السيرفر");
+    } finally {
+      setSaving(false);
     }
   };
 
@@ -336,12 +342,15 @@ export default function EditCar() {
       "لن تتمكن من استعادة بيانات السيارة بعد الحذف!",
       "هل أنت متأكد من الحذف؟",
       async () => {
+        setDeleting(true);
         try {
           await axios.delete(`${API_URL}/api/delete/cars/${id}`);
           showSuccess("تم حذف السيارة بنجاح");
           setTimeout(() => navigate("/Dashbord/allCar"), 1500);
         } catch (err) {
           showError(err.response?.data?.message || "حدث خطأ أثناء الحذف");
+        } finally {
+          setDeleting(false);
         }
       }
     );
@@ -852,11 +861,44 @@ export default function EditCar() {
           </div>
 
           <div className="box-button-submit">
-            <button type="button" className="btn-delete" onClick={handleDelete}>
-              حذف السيارة
+            <button
+              type="button"
+              className="btn-delete"
+              onClick={handleDelete}
+              disabled={deleting || saving}
+              style={{
+                opacity: deleting ? 0.7 : 1,
+                cursor: deleting ? "not-allowed" : "pointer"
+              }}
+            >
+              {deleting ? (
+                <div className="Loding">
+                  جاري الحذف
+                  <FaSpinner className="spinner-icon" />
+                </div>
+              ) : (
+                "حذف السيارة"
+              )}
             </button>
-            <button type="submit" className="btnSave" disabled={uploading}>
-              {uploading ? "جاري الحفظ..." : "حفظ جميع التعديلات"}
+            <button
+              type="submit"
+              className="btnSave"
+              disabled={uploading || saving || deleting}
+              style={{
+                opacity: saving ? 0.7 : 1,
+                cursor: saving ? "not-allowed" : "pointer"
+              }}
+            >
+              {saving ? (
+                <div className="Loding">
+                  جاري حفظ التعديلات
+                  <FaSpinner className="spinner-icon" />
+                </div>
+              ) : uploading ? (
+                "جاري رفع الصور..."
+              ) : (
+                "حفظ جميع التعديلات"
+              )}
             </button>
           </div>
         </div>

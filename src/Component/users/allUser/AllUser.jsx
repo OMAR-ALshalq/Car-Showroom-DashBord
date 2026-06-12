@@ -9,7 +9,6 @@ import { IoCloseCircleSharp } from "react-icons/io5";
 
 const API_URL = "https://car-showroom-server.onrender.com";
 
-
 import axios from "axios";
 import { showSuccess, showError, showConfirm } from "../../toast/Toast";
 import Loader from "../../loader/Loader";
@@ -109,7 +108,9 @@ export default function AllUser() {
         </div>
       )}
       <div className="BoxAddUser" dir="rtl">
-        <button className="btn-AddUser" onClick={() => setShowAddUser(true)}>اضافة مستخدم</button>
+        <button className="btn-AddUser" onClick={() => setShowAddUser(true)}>
+          اضافة مستخدم
+        </button>
         <div className="filtercontiner">
           <div className="filterBoxButton">
             <button
@@ -193,6 +194,7 @@ export default function AllUser() {
                 setShowEditUser(true);
                 setSelectedUser(user);
               }}
+              key={user._id}
             >
               <div className="BoxinfoUser">
                 <div className="TitleUser">

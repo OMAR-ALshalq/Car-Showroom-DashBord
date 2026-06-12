@@ -355,7 +355,7 @@
 .table-cell .buttonEdit {
   text-decoration: none;
   padding: 0px 8px;
-  color: white;
+  color: #000000;
   border: 1px solid transparent;
   background: var(--dashboard-warning);
   border-radius: 5px;
@@ -674,6 +674,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 20px;
+    margin: 0 0 50px 0;
   }
   .BoxMainClassification .BoxCard-classification {
     width: 40%;
@@ -970,4 +971,22 @@
   to {
     left: -350px;
   }
+}
+
+
+.Loding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.spinner-icon {
+  animation: spin 1s linear infinite;
+  margin-left: 5px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

@@ -6,10 +6,10 @@ import { MdEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa6";
 import { IoEyeOffOutline, IoEye } from "react-icons/io5";
 import { FaPhoneSquareAlt } from "react-icons/fa";
+import { FaSpinner } from "react-icons/fa";
 import { showSuccess, showError, showConfirm } from "../../toast/Toast";
 
 const API_URL = "https://car-showroom-server.onrender.com";
-
 
 export default function EditUser({ closeModal, refreshData, userData }) {
   const [formData, setFormData] = useState({
@@ -21,6 +21,7 @@ export default function EditUser({ closeModal, refreshData, userData }) {
 
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
     if (userData) {
@@ -100,10 +101,9 @@ export default function EditUser({ closeModal, refreshData, userData }) {
       "لن تتمكن من استعادة بيانات هذا المستخدم بعد الحذف!",
       `هل أنت متأكد من حذف ${userData.name}؟`,
       async () => {
+        setDeleting(true);
         try {
-          await axios.delete(
-            `${API_URL}/api/delete/users/${userData._id}`
-          );
+          await axios.delete(`${API_URL}/api/delete/users/${userData._id}`);
           showSuccess("تم حذف المستخدم من قاعدة البيانات", "تم الحذف!");
           refreshData();
           closeModal();
@@ -112,6 +112,8 @@ export default function EditUser({ closeModal, refreshData, userData }) {
             err.response?.data?.message || "حدث خطأ أثناء محاولة الحذف",
             "عذراً..."
           );
+        } finally {
+          setDeleting(false);
         }
       }
     );
@@ -164,7 +166,6 @@ export default function EditUser({ closeModal, refreshData, userData }) {
               value={formData.password}
               onChange={handleChange}
             />
-            <FaLock className="iconPassword" />
             <div
               className="eye-icon"
               onClick={() => setShowPassword(!showPassword)}
@@ -193,11 +194,42 @@ export default function EditUser({ closeModal, refreshData, userData }) {
             <h4>User</h4>
           </div>
 
-          <button type="button" className="btn-delete" onClick={handleDelete}>
-            حذف المستخدم
+          <button
+            type="button"
+            className="btn-delete"
+            onClick={handleDelete}
+            disabled={deleting || loading}
+            style={{
+              opacity: deleting ? 0.7 : 1,
+              cursor: deleting ? "not-allowed" : "pointer"
+            }}
+          >
+            {deleting ? (
+              <div className="Loding">
+                جاري الحذف
+                <FaSpinner className="spinner-icon" />
+              </div>
+            ) : (
+              "حذف المستخدم"
+            )}
           </button>
-          <button className="btn-addUser" type="submit" disabled={loading}>
-            {loading ? "جاري الحفظ..." : "تحديث البيانات"}
+          <button
+            className="btn-addUser"
+            type="submit"
+            disabled={loading || deleting}
+            style={{
+              opacity: loading ? 0.7 : 1,
+              cursor: loading ? "not-allowed" : "pointer"
+            }}
+          >
+            {loading ? (
+              <div className="Loding">
+                جاري حفظ التعديلات
+                <FaSpinner className="spinner-icon" />
+              </div>
+            ) : (
+              "تحديث البيانات"
+            )}
           </button>
         </form>
       </div>

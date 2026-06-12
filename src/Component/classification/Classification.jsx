@@ -7,7 +7,8 @@ import {
   FaPlusCircle,
   FaTimes,
   FaCloudUploadAlt,
-  FaCheckCircle
+  FaCheckCircle,
+  FaSpinner
 } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 import { GrClose } from "react-icons/gr";
@@ -17,13 +18,13 @@ import Loader from "../loader/Loader";
 
 const API_URL = "https://car-showroom-server.onrender.com";
 
-
 export default function Classification() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [deletingId, setDeletingId] = useState(null);
   const [imageFile, setImageFile] = useState(null);
   const [formData, setFormData] = useState({
     brand: "",
@@ -107,15 +108,16 @@ export default function Classification() {
       "لن تتمكن من التراجع عن حذف هذا التصنيف!",
       "هل أنت متأكد؟",
       async () => {
+        setDeletingId(id);
         try {
-          await axios.delete(
-            `${API_URL}/api/classifications/delete/${id}`
-          );
+          await axios.delete(`${API_URL}/api/classifications/delete/${id}`);
           setItems((prevItems) => prevItems.filter((item) => item._id !== id));
           showSuccess("تم حذف التصنيف بنجاح", "تم الحذف!");
           // eslint-disable-next-line no-unused-vars
         } catch (error) {
           showError("حدثت مشكلة أثناء عملية الحذف");
+        } finally {
+          setDeletingId(null);
         }
       }
     );
@@ -293,7 +295,7 @@ export default function Classification() {
           <h2>التصنيفات</h2>
           <div className="FilterAndAddClass">
             <button className="btnAddClass" onClick={() => setShowModal(true)}>
-              <FaPlusCircle className="IconAdd"/> إضافة تصنيف جديد
+              <FaPlusCircle className="IconAdd" /> إضافة تصنيف جديد
             </button>
             <div className="filter">
               {/* Brand */}
@@ -448,7 +450,7 @@ export default function Classification() {
             <span className="table-header">Body Type</span>
             <span className="table-header">Action</span>
             {filteredItems.length > 0 ? (
-              filteredItems.map((bodyType) => {
+              filteredItems.reverse().map((bodyType) => {
                 const model = bodyType.parentId;
                 const brand = model?.parentId;
                 return (
@@ -482,8 +484,20 @@ export default function Classification() {
                       <button
                         className="buttonDelete"
                         onClick={() => handleDelete(bodyType._id)}
+                        disabled={deletingId === bodyType._id}
+                        style={{
+                          opacity: deletingId === bodyType._id ? 0.7 : 1,
+                          cursor:
+                            deletingId === bodyType._id
+                              ? "not-allowed"
+                              : "pointer"
+                        }}
                       >
-                        حذف
+                        {deletingId === bodyType._id ? (
+                          <FaSpinner className="spinner-icon" />
+                        ) : (
+                          "حذف"
+                        )}
                       </button>
                     </div>
                   </React.Fragment>
@@ -532,8 +546,20 @@ export default function Classification() {
                         <button
                           className="buttonDelete"
                           onClick={() => handleDelete(bodyType._id)}
+                          disabled={deletingId === bodyType._id}
+                          style={{
+                            opacity: deletingId === bodyType._id ? 0.7 : 1,
+                            cursor:
+                              deletingId === bodyType._id
+                                ? "not-allowed"
+                                : "pointer"
+                          }}
                         >
-                          حذف
+                          {deletingId === bodyType._id ? (
+                            <FaSpinner className="spinner-icon" />
+                          ) : (
+                            "حذف"
+                          )}
                         </button>
                       </div>
                     </div>
@@ -554,13 +580,13 @@ export default function Classification() {
       {showModal && (
         <div className="ModalOverlay">
           <div className="ModalContent" dir="rtl">
-            <FaTimes
+            {/* <FaTimes
               className="closeIcon"
               onClick={() => {
                 setShowModal(false);
                 setFormData({ brand: "", model: "", bodyType: "" });
               }}
-            />
+            /> */}
             <form onSubmit={handleSubmit} className="ModalForm">
               <div className="InputGroup">
                 <label>اسم الماركة:</label>
@@ -612,13 +638,27 @@ export default function Classification() {
                   type="submit"
                   className="btnSave"
                   disabled={isSubmitting}
+                  style={{
+                    opacity: isSubmitting ? 0.7 : 1,
+                    cursor: isSubmitting ? "not-allowed" : "pointer"
+                  }}
                 >
-                  {isSubmitting ? "جاري الحفظ والرفع..." : "حفظ التصنيف"}
+                  {isSubmitting ? (
+                    <div className="Loding">
+                      جاري حفظ التصنيف
+                      <FaSpinner className="spinner-icon" />
+                    </div>
+                  ) : (
+                    "حفظ التصنيف"
+                  )}
                 </button>
                 <button
                   type="button"
                   className="btnCancel"
-                  onClick={() => setShowModal(false)}
+                  onClick={() => {
+                    setShowModal(false);
+                    setFormData({ brand: "", model: "", bodyType: "" });
+                  }}
                 >
                   إلغاء
                 </button>
@@ -632,13 +672,13 @@ export default function Classification() {
         <div className="ModalOverlay">
           <div className="ModalContent " dir="rtl">
             <div className="ModalHeader">
-              <FaTimes
+              {/* <FaTimes
                 className="closeIcon"
                 onClick={() => {
                   setShowEditModal(false);
                   setFormData({ brand: "", model: "", bodyType: "" });
                 }}
-              />
+              /> */}
             </div>
             <form onSubmit={handleEditSubmit} className="ModalForm">
               <div className="current-image-section">
@@ -703,13 +743,27 @@ export default function Classification() {
                   type="submit"
                   className="btnUpdate"
                   disabled={isSubmitting}
+                  style={{
+                    opacity: isSubmitting ? 0.7 : 1,
+                    cursor: isSubmitting ? "not-allowed" : "pointer"
+                  }}
                 >
-                  {isSubmitting ? "جاري التحديث..." : "حفظ التغييرات"}
+                  {isSubmitting ? (
+                    <div ClassName="Loding">
+                      جاري حفظ التعديلات
+                      <FaSpinner className="spinner-icon" />
+                    </div>
+                  ) : (
+                    "حفظ التغييرات"
+                  )}
                 </button>
                 <button
                   type="button"
                   className="btnCancel"
-                  onClick={() => setShowEditModal(false)}
+                  onClick={() => {
+                    setShowEditModal(false);
+                    setFormData({ brand: "", model: "", bodyType: "" });
+                  }}
                 >
                   إلغاء
                 </button>

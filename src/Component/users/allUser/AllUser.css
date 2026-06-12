@@ -43,7 +43,7 @@
   color: white;
 }
 
-.BoxAllUser .BoxAddUser .btn-AddUser:hover{
+.BoxAllUser .BoxAddUser .btn-AddUser:hover {
   background: rgb(167, 224, 167);
 }
 
@@ -143,11 +143,12 @@
 .table-cell button:nth-child(1) {
   background: var(--dashboard-warning);
   color: #000000;
+  padding: 2px 8px;
 }
 
 .table-cell button:nth-child(2) {
   background: var(--dashboard-error);
-  color: var(--accent-text);
+  color: #000000;
 }
 
 .table-cell button:nth-child(1):hover {
@@ -319,7 +320,7 @@
     .BoxAddUser .filtercontiner {
       /* background: red; */
       padding: 0 0 0 0;
-      width:100%;
+      width: 100%;
     }
     .BoxAllUser .BoxAddUser .filtercontiner .filterBoxButton {
       /* background: green; */

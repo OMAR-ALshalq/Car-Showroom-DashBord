@@ -2,11 +2,12 @@ import "./AddCar.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
+import { FaSpinner } from "react-icons/fa";
+
 import axios from "axios";
 import { showSuccess, showError } from "../../toast/Toast";
 
 const API_URL = "https://car-showroom-server.onrender.com";
-
 
 const initialState = {
   brand: "",
@@ -23,7 +24,7 @@ const initialState = {
     capacityLitre: "",
     capacityCC: "",
     transmission: "automatic",
-    fuelType: "gasoline"
+    fulType: "gasoline"
   },
   safetyFeatures: [],
   comfortFeatures: [],
@@ -36,6 +37,7 @@ export default function AddCar() {
 
   const [carData, setCarData] = useState(initialState);
   const [uploading, setUploading] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const [showBrandList, setShowBrandList] = useState(false);
   const [brandAnimation, setBrandAnimation] = useState("show");
@@ -137,7 +139,7 @@ export default function AddCar() {
       const urls = await Promise.all(uploadPromises);
       setCarData((prev) => ({ ...prev, images: [...prev.images, ...urls] }));
       showSuccess("تم رفع الصور بنجاح");
-    // eslint-disable-next-line no-unused-vars
+      // eslint-disable-next-line no-unused-vars
     } catch (error) {
       showError("فشل رفع الصور");
     } finally {
@@ -195,11 +197,24 @@ export default function AddCar() {
       showError("الرجاء تعبئة جميع الحقول", "حقول فارغة");
       return;
     }
+
+    setSubmitting(true);
+
+    // 👇 أضف هذا السطر لضمان القيم الافتراضية
+    const dataToSubmit = {
+      ...carData,
+      engine: {
+        ...carData.engine,
+        transmission: carData.engine.transmission || "automatic",
+        fulType: carData.engine.fulType || "gasoline"
+      }
+    };
+
     try {
       const response = await fetch(`${API_URL}/api/add/cars`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(carData)
+        body: JSON.stringify(dataToSubmit) // 👈 استخدم dataToSubmit بدل carData
       });
       if (response.ok) {
         showSuccess("تمت إضافة السيارة بنجاح");
@@ -210,12 +225,51 @@ export default function AddCar() {
           setSelectedBodyTypeName("");
           navigate("/Dashbord/allCar");
         }, 1500);
+      } else {
+        showError("فشل في إضافة السيارة");
       }
-    // eslint-disable-next-line no-unused-vars
+      // eslint-disable-next-line no-unused-vars
     } catch (error) {
       showError("لم يتم اضافة السيارة");
+    } finally {
+      setSubmitting(false);
     }
   };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const emptyFields = validateForm();
+  //   if (emptyFields.length > 0) {
+  //     showError("الرجاء تعبئة جميع الحقول", "حقول فارغة");
+  //     return;
+  //   }
+
+  //   setSubmitting(true);
+
+  //   try {
+  //     const response = await fetch(`${API_URL}/api/add/cars`, {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(carData)
+  //     });
+  //     if (response.ok) {
+  //       showSuccess("تمت إضافة السيارة بنجاح");
+  //       setTimeout(() => {
+  //         setCarData(initialState);
+  //         setSelectedBrandName("");
+  //         setSelectedModelName("");
+  //         setSelectedBodyTypeName("");
+  //         navigate("/Dashbord/allCar");
+  //       }, 1500);
+  //     } else {
+  //       showError("فشل في إضافة السيارة");
+  //     }
+  //   // eslint-disable-next-line no-unused-vars
+  //   } catch (error) {
+  //     showError("لم يتم اضافة السيارة");
+  //   } finally {
+  //     setSubmitting(false);
+  //   }
+  // };
 
   const handleAddFeature = (category, fieldName) => {
     const value = featureInput[category].trim();
@@ -554,7 +608,7 @@ export default function AddCar() {
                     type="radio"
                     name="engine.fuelType"
                     value="gasoline"
-                    checked={carData.engine.fuelType === "gasoline"}
+                    checked={carData.engine.fulType === "gasoline"}
                     onChange={handleChange}
                   />
                   <label>ديزل</label>
@@ -562,7 +616,7 @@ export default function AddCar() {
                     type="radio"
                     name="engine.fuelType"
                     value="diesel"
-                    checked={carData.engine.fuelType === "diesel"}
+                    checked={carData.engine.fulType === "diesel"}
                     onChange={handleChange}
                   />
                   <label>كهرباء</label>
@@ -570,7 +624,7 @@ export default function AddCar() {
                     type="radio"
                     name="engine.fuelType"
                     value="electricity"
-                    checked={carData.engine.fuelType === "electricity"}
+                    checked={carData.engine.fulType === "electricity"}
                     onChange={handleChange}
                   />
                   <label>هايبرد</label>
@@ -578,7 +632,7 @@ export default function AddCar() {
                     type="radio"
                     name="engine.fuelType"
                     value="Hybrid"
-                    checked={carData.engine.fuelType === "Hybrid"}
+                    checked={carData.engine.fulType === "Hybrid"}
                     onChange={handleChange}
                   />
                 </div>
@@ -712,9 +766,22 @@ export default function AddCar() {
             <button
               type="submit"
               className="box-button-submit"
-              style={{ marginTop: "20px", padding: "10px 30px" }}
+              disabled={submitting}
+              style={{
+                marginTop: "20px",
+                padding: "10px 30px",
+                opacity: submitting ? 0.7 : 1,
+                cursor: submitting ? "not-allowed" : "pointer"
+              }}
             >
-              اضافة السيارة
+              {submitting ? (
+                <div className="Loding">
+                  جاري الاضافة
+                  <FaSpinner className="spinner-icon" />
+                </div>
+              ) : (
+                "اضافة السيارة"
+              )}
             </button>
           </div>
         </form>
