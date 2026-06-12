@@ -549,7 +549,7 @@ export default function AddCar() {
                 </div>
                 <h5>نوع الوقود</h5>
                 <div className="box-radio">
-                  <label>بنزين</label>
+                  <label>بانزين</label>
                   <input
                     type="radio"
                     name="engine.fuelType"
