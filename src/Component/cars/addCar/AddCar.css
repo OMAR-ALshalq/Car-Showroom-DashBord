@@ -879,10 +879,10 @@
   }
   .BoxAddCar .ImagesUploadSection h4 {
     margin: 0 20px 0 0;
-}
-.BoxAddCar .ImagesUploadSection .upload-container label {
-  margin: 0 -35px 0 0 ;
-}
+  }
+  .BoxAddCar .ImagesUploadSection .upload-container label {
+    margin: 0 -35px 0 0;
+  }
 }
 /* End Media */
 .swal-loading-popup {
@@ -940,12 +940,10 @@
   background-color: var(--dashboard-success, #2e7d32) !important;
 }
 
-
 .box-button-submit button:disabled {
   background-color: #cccccc;
   border-color: #cccccc;
 }
-
 
 .Loding {
   display: flex;
@@ -960,6 +958,10 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

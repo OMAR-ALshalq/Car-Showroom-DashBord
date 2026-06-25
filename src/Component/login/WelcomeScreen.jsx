@@ -114,8 +114,8 @@ export default function WelcomeScreen({ onFinish }) {
 
         <div className={`welcome-brand ${step >= 0 ? "visible" : ""}`}>
           <h1 className="brand-name">
-            <span className="brand-almalih">ALMALIH</span>
-            <span className="brand-motors">MOTORS</span>
+            <span className="brand-almalih">Car</span>
+            <span className="brand-motors">ShowRoom</span>
           </h1>
           <div className="brand-line"></div>
         </div>

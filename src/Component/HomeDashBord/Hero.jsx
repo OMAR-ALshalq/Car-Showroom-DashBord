@@ -90,7 +90,7 @@ export default function Hero() {
       <div className="continer continerHero">
         <div className="NavBarHero" id="NavBar">
           <div className="icon-NavBarHero">
-            <h3>AlmalihMotors</h3>
+            <h3>CarShowRoom</h3>
           </div>
           <div className="DarkMod-User-profile">
             <div className="DarkMode" onClick={() => setIsDark(!isDark)}>
