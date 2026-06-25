@@ -1,7 +1,6 @@
 import "./WelcomeScreen.css";
 import { useState, useEffect } from "react";
 
-// ✅ دالة خارج المكون لتوليد الجزيئات
 function generateParticles(count = 15) {
   return Array.from({ length: count }, (_, i) => ({
     id: i,
